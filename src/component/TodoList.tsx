@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Todo } from "../states/todoAppState"
+import { Todo } from "../state/todoAppState"
 import { TodoItemContainer } from "../container/TodoItemContainer"
 
 type Props = {

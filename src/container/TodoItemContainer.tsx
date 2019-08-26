@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux"
 import { useCallback } from "react"
 import { todoAppActions } from "../actions/todoAppActions"
 import { TodoItem } from "../component/TodoItem"
-import { Todo } from "../states/todoAppState"
+import { Todo } from "../state/todoAppState"
 
 type Props = Readonly<{
   todo: Todo
@@ -18,8 +18,6 @@ export const TodoItemContainer = ({ todo }: Props) => {
     },
     [dispatch]
   )
-
-  console.log("called!!!")
 
   const handleCheckedChange = useCallback(
     (id: number, selected: boolean) => {

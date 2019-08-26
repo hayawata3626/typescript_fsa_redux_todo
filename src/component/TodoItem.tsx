@@ -1,6 +1,7 @@
 import * as React from "react"
-import { Todo } from "../states/todoAppState"
+import { Todo } from "../state/todoAppState"
 import { TextField, Card, Checkbox } from "@material-ui/core"
+import { useCallback } from "react"
 
 type Props = {
   todo: Todo
@@ -10,15 +11,19 @@ type Props = {
 }
 
 export const TodoItem = ({ todo, onChangeTitle, onCheckedChange }: Props) => {
-  console.log(todo.selected, "aaaaaaaaaaaaa")
-  const handleTitleChange = (e: any) => {
-    onChangeTitle(todo.id, e.target!.value)
-  }
+  const handleTitleChange = useCallback(
+    (e: any) => {
+      onChangeTitle(todo.id, e.target!.value)
+    },
+    [todo, onChangeTitle]
+  )
 
-  const handleCheckedChange = (e: any, checked: boolean) => {
-    console.log(checked, "checked")
-    onCheckedChange(todo.id, checked)
-  }
+  const handleCheckedChange = useCallback(
+    (e: any, checked: boolean) => {
+      onCheckedChange(todo.id, checked)
+    },
+    [todo, onCheckedChange]
+  )
 
   return (
     <Card>

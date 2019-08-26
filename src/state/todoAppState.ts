@@ -10,25 +10,35 @@ export type Todo = Readonly<{
   selected: boolean
 }>
 
+export type TodoById = Readonly<{
+  [Key: number]: Todo
+}>
+
 export type TodoAppState = Readonly<{
-  todoList: ReadonlyArray<Todo> | []
+  todoList: {
+    byId: TodoById
+    allIds: ReadonlyArray<number>
+  }
 }>
 
 export const initialState: TodoAppState = {
-  todoList: [
-    {
-      id: 1,
-      title: "ラーメン食べる",
-      selected: false,
-      done: false
+  todoList: {
+    byId: {
+      1: {
+        id: 1,
+        title: "ラーメン食べる",
+        selected: false,
+        done: false
+      },
+      2: {
+        id: 2,
+        title: "髪を切る",
+        selected: false,
+        done: false
+      }
     },
-    {
-      id: 2,
-      title: "髪を切る",
-      selected: false,
-      done: false
-    }
-  ]
+    allIds: [1, 2]
+  }
 }
 
 export const todoReducer = reducerWithInitialState(initialState)

@@ -1,4 +1,4 @@
-import { todoReducer, TodoAppState } from "./states/todoAppState"
+import { todoReducer, TodoAppState } from "./state/todoAppState"
 import { combineReducers, createStore } from "redux"
 
 export type AppState = {
@@ -9,6 +9,6 @@ export const store = createStore(
   combineReducers<AppState>({
     todoApp: todoReducer
   }),
-  (<any>window).__REDUX_DEVTOOLS_EXTENSION__ &&
-    (<any>window).__REDUX_DEVTOOLS_EXTENSION__()
+  (window as any).__REDUX_DEVTOOLS_EXTENSION__ &&
+    (window as any).__REDUX_DEVTOOLS_EXTENSION__()
 )
