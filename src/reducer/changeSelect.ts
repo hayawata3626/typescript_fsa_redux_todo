@@ -22,7 +22,6 @@ const filterAndChangeTodo = (
 ): ReadonlyArray<Todo> =>
   list.map(item => {
     if (item.id === id) {
-      console.log(id, item)
       return { ...item, selected: selected }
     } else {
       return item

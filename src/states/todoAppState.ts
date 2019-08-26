@@ -21,6 +21,12 @@ export const initialState: TodoAppState = {
       title: "ラーメン食べる",
       selected: false,
       done: false
+    },
+    {
+      id: 2,
+      title: "髪を切る",
+      selected: false,
+      done: false
     }
   ]
 }

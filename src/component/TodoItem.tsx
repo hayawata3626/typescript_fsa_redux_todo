@@ -10,12 +10,14 @@ type Props = {
 }
 
 export const TodoItem = ({ todo, onChangeTitle, onCheckedChange }: Props) => {
+  console.log(todo.selected, "aaaaaaaaaaaaa")
   const handleTitleChange = (e: any) => {
     onChangeTitle(todo.id, e.target!.value)
   }
 
   const handleCheckedChange = (e: any, checked: boolean) => {
-    onCheckedChange(todo.id, !checked)
+    console.log(checked, "checked")
+    onCheckedChange(todo.id, checked)
   }
 
   return (

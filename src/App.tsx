@@ -1,12 +1,15 @@
 import React from "react"
 import "./App.css"
 import { TodoList } from "./component/TodoList"
-import { initialState } from "./states/todoAppState"
+import { useSelector } from "react-redux"
+import { todoListSelector } from "./selector"
 
 const App: React.FC = () => {
+  const todoList = useSelector(todoListSelector)
+
   return (
     <div className="App">
-      <TodoList todoList={initialState.todoList} />
+      <TodoList todoList={todoList} />
     </div>
   )
 }

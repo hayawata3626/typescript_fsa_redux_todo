@@ -6,12 +6,10 @@ type Props = {
   todoList: ReadonlyArray<Todo>
 }
 
-export const TodoList = ({ todoList }: Props) => {
-  return (
-    <div>
-      {todoList.map((todo, index) => (
-        <TodoItemContainer todo={todo} key={index} />
-      ))}
-    </div>
-  )
-}
+export const TodoList = ({ todoList }: Props) => (
+  <div>
+    {todoList.map((todo, index) => (
+      <TodoItemContainer todo={todo} key={index} />
+    ))}
+  </div>
+)

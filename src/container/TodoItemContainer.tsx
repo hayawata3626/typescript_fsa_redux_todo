@@ -19,6 +19,8 @@ export const TodoItemContainer = ({ todo }: Props) => {
     [dispatch]
   )
 
+  console.log("called!!!")
+
   const handleCheckedChange = useCallback(
     (id: number, selected: boolean) => {
       dispatch(todoAppActions.changeSelect({ id: id, selected: selected }))
