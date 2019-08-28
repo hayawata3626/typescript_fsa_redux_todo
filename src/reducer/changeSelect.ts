@@ -1,4 +1,5 @@
 import { TodoAppState } from "../state/todoAppState"
+import _ from "lodash"
 
 type Payload = {
   id: number
@@ -19,5 +20,16 @@ export const changeSelect = (
         selected: selected
       }
     }
-  }
+  },
+  selectedTodoIds: filterTodoIds(id, selected, state.selectedTodoIds)
 })
+
+const filterTodoIds = (
+  id: number,
+  selected: boolean,
+  previousSelectedIds: ReadonlyArray<number>
+): ReadonlyArray<number> => {
+  return selected
+    ? _.unionBy([...previousSelectedIds, id])
+    : _.remove(previousSelectedIds, id)
+}

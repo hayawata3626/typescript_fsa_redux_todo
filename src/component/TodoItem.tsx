@@ -1,7 +1,8 @@
 import * as React from "react"
 import { Todo } from "../state/todoAppState"
-import { TextField, Card, Checkbox } from "@material-ui/core"
+import { TextField, Card, Checkbox, Typography } from "@material-ui/core"
 import { useCallback } from "react"
+import { css } from "@emotion/core"
 
 type Props = {
   todo: Todo
@@ -33,6 +34,11 @@ export const TodoItem = ({ todo, onChangeTitle, onCheckedChange }: Props) => {
         defaultValue={todo.title}
         onChange={handleTitleChange}
       />
+      <Typography>{todo.done ? "完了" : "未完了"}</Typography>
     </Card>
   )
 }
+
+const todoItemWrapperStyle = css`
+  display: flex;
+`
