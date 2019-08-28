@@ -20,7 +20,7 @@ export const TodoItem = ({ todo, onChangeTitle, onCheckedChange }: Props) => {
   )
 
   const handleCheckedChange = useCallback(
-    (e: any, checked: boolean) => {
+    (e: React.ChangeEvent<{}>, checked: boolean) => {
       onCheckedChange(todo.id, checked)
     },
     [todo, onCheckedChange]
