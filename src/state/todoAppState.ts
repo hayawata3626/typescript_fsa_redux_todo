@@ -6,6 +6,7 @@ import { changeTitleOfBulkEditModalReducer } from "../reducer/changeTitleOfBulkE
 import { checkedChangeOfBulkEditModalReducer } from "../reducer/checkedChangeOfBulkEditModal"
 import { openBulkEditModalReducer } from "../reducer/openBulkEditModal"
 import { closeBulkEditModalReducer } from "../reducer/closeBulkEditModal"
+import { decideBulkModalReducer } from "../reducer/decideBulkModal"
 
 export type Todo = Readonly<{
   id: number
@@ -64,5 +65,12 @@ export const todoReducer = reducerWithInitialState(initialState)
   .case(todoAppActions.changeSelect, changeSelect)
   .case(todoAppActions.openBulkEditModal, openBulkEditModalReducer)
   .case(todoAppActions.closeBulkEditModal, closeBulkEditModalReducer)
-  .case(todoAppActions.changeTitleOfBulkEditModal, changeTitleOfBulkEditModalReducer)
-  .case(todoAppActions.checkedChangeOfBulkEditModal, checkedChangeOfBulkEditModalReducer)
+  .case(
+    todoAppActions.changeTitleOfBulkEditModal,
+    changeTitleOfBulkEditModalReducer
+  )
+  .case(
+    todoAppActions.checkedChangeOfBulkEditModal,
+    checkedChangeOfBulkEditModalReducer
+  )
+  .case(todoAppActions.decideBulkModal, decideBulkModalReducer)

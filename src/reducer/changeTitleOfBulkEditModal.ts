@@ -4,7 +4,10 @@ type Payload = {
   text: string
 }
 
-export const changeTitleOfBulkEditModalReducer = (state: TodoAppState, {text}:Payload): TodoAppState => ({
+export const changeTitleOfBulkEditModalReducer = (
+  state: TodoAppState,
+  { text }: Payload
+): TodoAppState => ({
   ...state,
   bulkEditModal: {
     ...state.bulkEditModal,

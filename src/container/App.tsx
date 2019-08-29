@@ -41,6 +41,7 @@ const App: React.FC = () => {
 
   const handleDecide = useCallback(() => {
     // TODO: dispatch
+    dispatch(todoAppActions.decideBulkModal({}))
   }, [])
 
   return (
