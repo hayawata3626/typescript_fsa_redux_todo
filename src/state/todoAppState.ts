@@ -2,6 +2,8 @@ import { reducerWithInitialState } from "typescript-fsa-reducers"
 import { todoAppActions } from "../actions/todoAppActions"
 import { changeTaskTitleReducer } from "../reducer/changeTaskTitle"
 import { changeSelect } from "../reducer/changeSelect"
+import { changeTitleOfBulkEditModalReducer } from "../reducer/changeTitleOfBulkEditModal"
+import { checkedChangeOfBulkEditModalReducer } from "../reducer/checkedChangeOfBulkEditModal"
 import { openBulkEditModalReducer } from "../reducer/openBulkEditModal"
 import { closeBulkEditModalReducer } from "../reducer/closeBulkEditModal"
 
@@ -62,3 +64,5 @@ export const todoReducer = reducerWithInitialState(initialState)
   .case(todoAppActions.changeSelect, changeSelect)
   .case(todoAppActions.openBulkEditModal, openBulkEditModalReducer)
   .case(todoAppActions.closeBulkEditModal, closeBulkEditModalReducer)
+  .case(todoAppActions.changeTitleOfBulkEditModal, changeTitleOfBulkEditModalReducer)
+  .case(todoAppActions.checkedChangeOfBulkEditModal, checkedChangeOfBulkEditModalReducer)

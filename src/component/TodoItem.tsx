@@ -38,7 +38,3 @@ export const TodoItem = ({ todo, onChangeTitle, onCheckedChange }: Props) => {
     </Card>
   )
 }
-
-const todoItemWrapperStyle = css`
-  display: flex;
-`
