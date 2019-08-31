@@ -4,6 +4,7 @@ import { useCallback } from "react"
 import { todoAppActions } from "../actions/todoAppActions"
 import { TodoItem } from "../component/TodoItem"
 import { Todo } from "../state/todoAppState"
+import { changeTodoTitle } from "../reducer/changeTaskTitle"
 
 type Props = Readonly<{
   todo: Todo
@@ -14,7 +15,7 @@ export const TodoItemContainer = ({ todo }: Props) => {
 
   const handleTitleChange = useCallback(
     (id: number, title: string) => {
-      dispatch(todoAppActions.changeTodoTitle({ id: id, title: title }))
+      dispatch(changeTodoTitle({ id: id, title: title }))
     },
     [dispatch]
   )
