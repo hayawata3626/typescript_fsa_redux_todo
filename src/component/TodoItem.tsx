@@ -32,7 +32,6 @@ export const TodoItem = ({ todo, onChangeTitle, onCheckedChange }: Props) => {
       <TextField
         type={"text"}
         value={todo.title}
-        defaultValue={todo.title}
         onChange={handleTitleChange}
       />
       <Typography>{todo.done ? "完了" : "未完了"}</Typography>

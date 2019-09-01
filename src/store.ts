@@ -1,5 +1,6 @@
-import { todoReducer, TodoAppState } from "./state/todoAppState"
+import { TodoAppState } from "./state/todoAppState"
 import { combineReducers, createStore } from "redux"
+import { todoReducer } from "./reducer"
 
 export type AppState = {
   todoApp: TodoAppState

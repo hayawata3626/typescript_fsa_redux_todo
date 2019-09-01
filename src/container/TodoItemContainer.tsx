@@ -3,8 +3,7 @@ import { useDispatch } from "react-redux"
 import { useCallback } from "react"
 import { TodoItem } from "../component/TodoItem"
 import { Todo } from "../state/todoAppState"
-import { changeTodoTitle } from "../reducer/changeTaskTitle"
-import { changeSelect } from "../reducer/changeSelect"
+import { changeSelect, changeTodoTitle } from "../reducer"
 
 type Props = Readonly<{
   todo: Todo

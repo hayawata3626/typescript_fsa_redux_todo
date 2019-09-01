@@ -1,30 +1,3 @@
-import { reducerWithInitialState } from "typescript-fsa-reducers"
-import {
-  changeTaskTitleReducer,
-  changeTodoTitle
-} from "../reducer/changeTaskTitle"
-import { changeSelect, changeSelectReducer } from "../reducer/changeSelect"
-import {
-  changeTitleOfBulkEditModal,
-  changeTitleOfBulkEditModalReducer
-} from "../reducer/changeTitleOfBulkEditModal"
-import {
-  checkedChangeOfBulkEditModal,
-  checkedChangeOfBulkEditModalReducer
-} from "../reducer/checkedChangeOfBulkEditModal"
-import {
-  openBulkEditModal,
-  openBulkEditModalReducer
-} from "../reducer/openBulkEditModal"
-import {
-  closeBulkEditModal,
-  closeBulkEditModalReducer
-} from "../reducer/closeBulkEditModal"
-import {
-  decideBulkModal,
-  decideBulkModalReducer
-} from "../reducer/decideBulkModal"
-
 export type Todo = Readonly<{
   id: number
   title: string
@@ -76,12 +49,3 @@ export const initialState: TodoAppState = {
     done: false
   }
 }
-
-export const todoReducer = reducerWithInitialState(initialState)
-  .case(changeTodoTitle, changeTaskTitleReducer)
-  .case(changeSelect, changeSelectReducer)
-  .case(openBulkEditModal, openBulkEditModalReducer)
-  .case(closeBulkEditModal, closeBulkEditModalReducer)
-  .case(changeTitleOfBulkEditModal, changeTitleOfBulkEditModalReducer)
-  .case(checkedChangeOfBulkEditModal, checkedChangeOfBulkEditModalReducer)
-  .case(decideBulkModal, decideBulkModalReducer)

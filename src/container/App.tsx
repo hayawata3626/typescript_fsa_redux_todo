@@ -10,11 +10,13 @@ import _ from "lodash"
 import AppBar from "@material-ui/core/AppBar"
 import { Button, Toolbar } from "@material-ui/core"
 import { BulkEditModal } from "../component/BulkEditModal"
-import { openBulkEditModal } from "../reducer/openBulkEditModal"
-import { closeBulkEditModal } from "../reducer/closeBulkEditModal"
-import { changeTitleOfBulkEditModal } from "../reducer/changeTitleOfBulkEditModal"
-import { checkedChangeOfBulkEditModal } from "../reducer/checkedChangeOfBulkEditModal"
-import { decideBulkModal } from "../reducer/decideBulkModal"
+import {
+  changeTitleOfBulkEditModal,
+  checkedChangeOfBulkEditModal,
+  closeBulkEditModal,
+  decideBulkModal,
+  openBulkEditModal
+} from "../reducer"
 
 const App: React.FC = () => {
   const dispatch = useDispatch()

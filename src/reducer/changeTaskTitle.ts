@@ -7,7 +7,7 @@ type Payload = {
 }
 
 export const changeTodoTitle = actionCreatorFactory()<Payload>(
-  "CHANGE_TODO_TITLE"
+  "changeTodoTitle"
 )
 
 export const changeTaskTitleReducer = (
