@@ -6,8 +6,13 @@ import {
 } from "../state/todoAppState"
 import _ from "lodash"
 import { fromArrayToObject } from "../util/fromArrayToObject"
+import actionCreatorFactory from "typescript-fsa"
 
 type Payload = {}
+
+export const decideBulkModal = actionCreatorFactory()<Payload>(
+  "decideBulkModal"
+)
 
 export const decideBulkModalReducer = (
   state: TodoAppState,

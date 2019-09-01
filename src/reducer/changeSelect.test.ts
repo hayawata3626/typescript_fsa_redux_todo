@@ -1,14 +1,14 @@
 // import { CreativeTagState, initialState, reducer } from ".."
-// import { changeSelect } from "./changeSelect"
+// import { changeSelectReducer } from "./changeSelectReducer"
 
 import { TodoAppState } from "../state/todoAppState"
-import { changeSelect } from "./changeSelect"
+import { changeSelectReducer } from "./changeSelect"
 
-describe("changeSelect", () => {
+describe("changeSelectReducer", () => {
   let state: TodoAppState
 
   beforeEach(() => {
-    // state = reducer(, changeSelect({}))
+    // state = reducer(, changeSelectReducer({}))
   })
 
   it("になっていること", () => {

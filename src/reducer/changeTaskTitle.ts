@@ -1,12 +1,14 @@
 import { TodoAppState } from "../state/todoAppState"
-import { actionCreator } from "../actions/todoAppActions"
+import actionCreatorFactory from "typescript-fsa"
 
 type Payload = {
   id: number
   title: string
 }
 
-export const changeTodoTitle = actionCreator<Payload>("CHANGE_TODO_TITLE")
+export const changeTodoTitle = actionCreatorFactory()<Payload>(
+  "CHANGE_TODO_TITLE"
+)
 
 export const changeTaskTitleReducer = (
   state: TodoAppState,

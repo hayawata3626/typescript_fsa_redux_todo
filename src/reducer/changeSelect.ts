@@ -1,12 +1,15 @@
 import { TodoAppState } from "../state/todoAppState"
 import _ from "lodash"
+import actionCreatorFactory from "typescript-fsa"
 
 type Payload = {
   id: number
   selected: boolean
 }
 
-export const changeSelect = (
+export const changeSelect = actionCreatorFactory()<Payload>("changeSelect")
+
+export const changeSelectReducer = (
   state: TodoAppState,
   { id, selected }: Payload
 ): TodoAppState => ({

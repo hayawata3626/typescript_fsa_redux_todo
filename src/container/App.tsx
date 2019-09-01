@@ -10,7 +10,11 @@ import _ from "lodash"
 import AppBar from "@material-ui/core/AppBar"
 import { Button, Toolbar } from "@material-ui/core"
 import { BulkEditModal } from "../component/BulkEditModal"
-import { todoAppActions } from "../actions/todoAppActions"
+import { openBulkEditModal } from "../reducer/openBulkEditModal"
+import { closeBulkEditModal } from "../reducer/closeBulkEditModal"
+import { changeTitleOfBulkEditModal } from "../reducer/changeTitleOfBulkEditModal"
+import { checkedChangeOfBulkEditModal } from "../reducer/checkedChangeOfBulkEditModal"
+import { decideBulkModal } from "../reducer/decideBulkModal"
 
 const App: React.FC = () => {
   const dispatch = useDispatch()
@@ -19,30 +23,30 @@ const App: React.FC = () => {
   const bulkEditModal = useSelector(bulkEditModalSelector)
 
   const handleBulkEditButtonClick = useCallback(() => {
-    dispatch(todoAppActions.openBulkEditModal({}))
+    dispatch(openBulkEditModal({}))
   }, [dispatch])
 
   const handleCloseButtonClick = useCallback(() => {
-    dispatch(todoAppActions.closeBulkEditModal({}))
+    dispatch(closeBulkEditModal({}))
   }, [dispatch])
 
   const handleTitleChange = useCallback(
     text => {
-      dispatch(todoAppActions.changeTitleOfBulkEditModal({ text: text }))
+      dispatch(changeTitleOfBulkEditModal({ text: text }))
     },
     [dispatch]
   )
 
-  const handleCheckedChange = useCallback(selected => {
-    dispatch(
-      todoAppActions.checkedChangeOfBulkEditModal({ selected: selected })
-    )
-  }, [])
+  const handleCheckedChange = useCallback(
+    selected => {
+      dispatch(checkedChangeOfBulkEditModal({ selected: selected }))
+    },
+    [dispatch]
+  )
 
   const handleDecide = useCallback(() => {
-    // TODO: dispatch
-    dispatch(todoAppActions.decideBulkModal({}))
-  }, [])
+    dispatch(decideBulkModal({}))
+  }, [dispatch])
 
   return (
     <div className="App">
