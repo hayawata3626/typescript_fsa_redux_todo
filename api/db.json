@@ -1,5 +1,13 @@
 {
   "posts": [{ "id": 1, "title": "json-server", "author": "typicode" }],
-  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
+  "todoList": [
+    { "id": 1, "body": "髪を切る" },
+    { "id": 2, "body": "銀行へ行く" },
+    { "id": 3, "body": "らーめん食べる" },
+    { "id": 4, "body": "弁当を作る" },
+    { "id": 5, "body": "帰省する" },
+    { "id": 6, "body": "コーディングする" },
+    { "id": 7, "body": "飲みに行く" }
+  ],
   "profile": { "name": "typicode" }
 }
