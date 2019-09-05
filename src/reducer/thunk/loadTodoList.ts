@@ -24,6 +24,6 @@ export const getCandidateOfTodoList = createAsync<any, any, any>(
     if (!data) {
       console.log("error")
     }
-    dispatch(loadTodoListSuccess({}))
+    // dispatch(loadTodoListSuccess({}))
   }
 )

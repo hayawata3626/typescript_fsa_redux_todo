@@ -1,7 +1,9 @@
 import actionCreatorFactory from "typescript-fsa"
-import { TodoAppState } from "../state/todoAppState"
+import { CandidateOfTodo, TodoAppState } from "../state/todoAppState"
 
-type Payload = {}
+type Payload = {
+  candidateOfTodoList: ReadonlyArray<CandidateOfTodo>
+}
 
 export const loadTodoListSuccess = actionCreatorFactory()<Payload>(
   "loadTodoListSuccess"
@@ -9,11 +11,11 @@ export const loadTodoListSuccess = actionCreatorFactory()<Payload>(
 
 export const loadTodoListSuccessReducer = (
   state: TodoAppState,
-  { result }: any
+  { candidateOfTodoList }: Payload
 ): TodoAppState => {
-  console.log(result, result)
   return {
     ...state,
-    loading: false
+    loading: false,
+    candidateOfTodoList: candidateOfTodoList
   }
 }

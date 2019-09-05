@@ -1,3 +1,8 @@
+export type CandidateOfTodo = Readonly<{
+  id: number
+  body: string
+}>
+
 export type Todo = Readonly<{
   id: number
   title: string
@@ -23,6 +28,7 @@ export type TodoAppState = Readonly<{
   selectedTodoIds: ReadonlyArray<number>
   bulkEditModal: BulkEditModal
   loading: boolean
+  candidateOfTodoList: ReadonlyArray<CandidateOfTodo>
 }>
 
 export const initialState: TodoAppState = {
@@ -49,5 +55,6 @@ export const initialState: TodoAppState = {
     title: "",
     done: false
   },
-  loading: false
+  loading: false,
+  candidateOfTodoList: []
 }
