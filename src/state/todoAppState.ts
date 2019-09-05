@@ -22,6 +22,7 @@ export type TodoAppState = Readonly<{
   }
   selectedTodoIds: ReadonlyArray<number>
   bulkEditModal: BulkEditModal
+  loading: boolean
 }>
 
 export const initialState: TodoAppState = {
@@ -47,5 +48,6 @@ export const initialState: TodoAppState = {
     open: false,
     title: "",
     done: false
-  }
+  },
+  loading: false
 }

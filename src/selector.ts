@@ -12,3 +12,5 @@ export const selectedTodoIdsSelector = (state: AppState) =>
 
 export const bulkEditModalSelector = (state: AppState) =>
   state.todoApp.bulkEditModal
+
+export const loadingSelector = (state: AppState) => state.todoApp.loading

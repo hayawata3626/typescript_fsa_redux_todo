@@ -19,6 +19,16 @@ import {
 } from "./checkedChangeOfBulkEditModal"
 import { decideBulkModal, decideBulkModalReducer } from "./decideBulkModal"
 import { initialState } from "../state/todoAppState"
+import { getCandidateOfTodoList } from "./thunk/loadTodoList"
+import {
+  loadTodoListStart,
+  loadTodoListStartReducer
+} from "./loadTodoListStart"
+import {
+  loadTodoListSuccess,
+  loadTodoListSuccessReducer
+} from "./loadTodoListSuccess"
+import { loadTodoListFailureReducer } from "./loadTodoListFailure"
 
 export * from "./changeTaskTitle"
 export * from "./changeSelect"
@@ -27,6 +37,7 @@ export * from "./closeBulkEditModal"
 export * from "./changeTitleOfBulkEditModal"
 export * from "./checkedChangeOfBulkEditModal"
 export * from "./decideBulkModal"
+export * from "./thunk/loadTodoList"
 
 export const todoReducer = reducerWithInitialState(initialState)
   .case(changeTodoTitle, changeTaskTitleReducer)
@@ -36,3 +47,6 @@ export const todoReducer = reducerWithInitialState(initialState)
   .case(changeTitleOfBulkEditModal, changeTitleOfBulkEditModalReducer)
   .case(checkedChangeOfBulkEditModal, checkedChangeOfBulkEditModalReducer)
   .case(decideBulkModal, decideBulkModalReducer)
+  .case(loadTodoListStart, loadTodoListStartReducer)
+  .case(loadTodoListSuccess, loadTodoListSuccessReducer)
+  .case(getCandidateOfTodoList.async.failed, loadTodoListFailureReducer)

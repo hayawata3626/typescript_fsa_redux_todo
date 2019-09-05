@@ -3,12 +3,13 @@ import { TodoList } from "../component/TodoList"
 import { useDispatch, useSelector } from "react-redux"
 import {
   bulkEditModalSelector,
+  loadingSelector,
   selectedTodoIdsSelector,
   todoListSelector
 } from "../selector"
 import _ from "lodash"
 import AppBar from "@material-ui/core/AppBar"
-import { Button, Toolbar } from "@material-ui/core"
+import { Button, CircularProgress, Toolbar } from "@material-ui/core"
 import { BulkEditModal } from "../component/BulkEditModal"
 import {
   changeTitleOfBulkEditModal,
@@ -21,6 +22,7 @@ import {
 const App: React.FC = () => {
   const dispatch = useDispatch()
   const todoList = useSelector(todoListSelector)
+  const loading = useSelector(loadingSelector)
   const selectedTodoIds = useSelector(selectedTodoIdsSelector)
   const bulkEditModal = useSelector(bulkEditModalSelector)
 
@@ -67,6 +69,7 @@ const App: React.FC = () => {
         onRequestClose={handleCloseButtonClick}
         onClickDecideButton={handleDecide}
       />
+      {loading && <CircularProgress />}
     </div>
   )
 }
