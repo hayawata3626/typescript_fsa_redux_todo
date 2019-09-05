@@ -5,12 +5,15 @@ import {
   Checkbox,
   Dialog,
   DialogContent,
-  TextField
+  TextField,
+  Typography
 } from "@material-ui/core"
 import { useCallback } from "react"
+import _ from "lodash"
 
 type Props = {
   bulkEditModal: BulkEditModalType
+  selectedTodoIds: ReadonlyArray<number>
   onChangeTitle: (text: string) => void
   onChecked: (checked: boolean) => void
   onRequestClose: () => void
@@ -19,6 +22,7 @@ type Props = {
 
 export const BulkEditModal = ({
   bulkEditModal,
+  selectedTodoIds,
   onChangeTitle,
   onChecked,
   onRequestClose,
@@ -47,6 +51,12 @@ export const BulkEditModal = ({
   return (
     <Dialog open={bulkEditModal.open} onClick={handleBackGroundClick}>
       <DialogContent onClick={handleDialogContentClick}>
+        {selectedTodoIds.map(id => (
+          <Typography>{id}が選択されています</Typography>
+        ))}
+        {_.isEmpty(selectedTodoIds) && (
+          <Typography>選択されているidはありません</Typography>
+        )}
         <TextField
           placeholder={"タイトルをクリック"}
           onChange={handleTextChange}

@@ -63,6 +63,7 @@ const App: React.FC = () => {
         </Toolbar>
       </AppBar>
       <BulkEditModal
+        selectedTodoIds={selectedTodoIds}
         bulkEditModal={bulkEditModal}
         onChangeTitle={handleTitleChange}
         onChecked={handleCheckedChange}

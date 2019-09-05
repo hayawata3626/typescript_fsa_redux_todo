@@ -8,6 +8,7 @@ export type Todo = Readonly<{
   title: string
   done: boolean
   selected: boolean
+  candidateOfTodoList: ReadonlyArray<CandidateOfTodo>
 }>
 
 export type TodoById = Readonly<{
@@ -28,7 +29,6 @@ export type TodoAppState = Readonly<{
   selectedTodoIds: ReadonlyArray<number>
   bulkEditModal: BulkEditModal
   loading: boolean
-  candidateOfTodoList: ReadonlyArray<CandidateOfTodo>
 }>
 
 export const initialState: TodoAppState = {
@@ -38,13 +38,15 @@ export const initialState: TodoAppState = {
         id: 1,
         title: "ラーメン食べる",
         selected: false,
-        done: false
+        done: false,
+        candidateOfTodoList: []
       },
       2: {
         id: 2,
         title: "髪を切る",
         selected: false,
-        done: false
+        done: false,
+        candidateOfTodoList: []
       }
     },
     allIds: [1, 2]
@@ -55,6 +57,5 @@ export const initialState: TodoAppState = {
     title: "",
     done: false
   },
-  loading: false,
-  candidateOfTodoList: []
+  loading: false
 }

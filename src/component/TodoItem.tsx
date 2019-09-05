@@ -1,27 +1,21 @@
 import * as React from "react"
-import { Todo } from "../state/todoAppState"
-import {
-  TextField,
-  Card,
-  Checkbox,
-  Typography,
-  Button
-} from "@material-ui/core"
+import { CandidateOfTodo, Todo } from "../state/todoAppState"
+import { TextField, Card, Checkbox, Typography } from "@material-ui/core"
 import { useCallback } from "react"
 
 type Props = {
   todo: Todo
+  candidateOfTodoList: ReadonlyArray<CandidateOfTodo>
 
   onChangeTitle: (id: number, text: string) => void
   onCheckedChange: (id: number, selected: boolean) => void
-  onRequestButtonClick: () => void
 }
 
 export const TodoItem = ({
   todo,
   onChangeTitle,
-  onCheckedChange,
-  onRequestButtonClick
+  candidateOfTodoList,
+  onCheckedChange
 }: Props) => {
   const handleTitleChange = useCallback(
     (e: any) => {
@@ -37,10 +31,6 @@ export const TodoItem = ({
     [todo, onCheckedChange]
   )
 
-  const handleRequestButtonClick = useCallback(() => {
-    onRequestButtonClick()
-  }, [])
-
   return (
     <Card>
       <Checkbox checked={todo.selected} onChange={handleCheckedChange} />
@@ -49,8 +39,10 @@ export const TodoItem = ({
         value={todo.title}
         onChange={handleTitleChange}
       />
+      {candidateOfTodoList.map(t => (
+        <div>{t.body}</div>
+      ))}
       <Typography>{todo.done ? "完了" : "未完了"}</Typography>
-      <Button onClick={handleRequestButtonClick}>通信する</Button>
     </Card>
   )
 }
