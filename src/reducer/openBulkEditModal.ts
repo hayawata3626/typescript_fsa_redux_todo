@@ -10,12 +10,10 @@ export const openBulkEditModal = actionCreatorFactory()<Payload>(
 export const openBulkEditModalReducer = (
   state: TodoAppState,
   {  }: Payload
-): TodoAppState => {
-  return {
-    ...state,
-    bulkEditModal: {
-      ...state.bulkEditModal,
-      open: true
-    }
+): TodoAppState => ({
+  ...state,
+  bulkEditModal: {
+    ...state.bulkEditModal,
+    open: true
   }
-}
+})

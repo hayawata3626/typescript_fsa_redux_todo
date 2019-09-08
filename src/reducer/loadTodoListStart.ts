@@ -10,9 +10,7 @@ export const loadTodoListStart = actionCreatorFactory()<Payload>(
 export const loadTodoListStartReducer = (
   state: TodoAppState,
   {  }: Payload
-): TodoAppState => {
-  return {
-    ...state,
-    loading: true
-  }
-}
+): TodoAppState => ({
+  ...state,
+  loading: true
+})

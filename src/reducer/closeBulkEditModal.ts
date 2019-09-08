@@ -12,18 +12,16 @@ export const closeBulkEditModal = actionCreatorFactory()<Payload>(
 export const closeBulkEditModalReducer = (
   state: TodoAppState,
   {  }: Payload
-): TodoAppState => {
-  return {
-    ...state,
-    todoList: {
-      ...state.todoList,
-      byId: fromArrayToObject(
-        _.map(state.todoList.byId, todo => ({ ...todo, selected: false }))
-      )
-    },
-    bulkEditModal: {
-      ...state.bulkEditModal,
-      open: false
-    }
+): TodoAppState => ({
+  ...state,
+  todoList: {
+    ...state.todoList,
+    byId: fromArrayToObject(
+      _.map(state.todoList.byId, todo => ({ ...todo, selected: false }))
+    )
+  },
+  bulkEditModal: {
+    ...state.bulkEditModal,
+    open: false
   }
-}
+})

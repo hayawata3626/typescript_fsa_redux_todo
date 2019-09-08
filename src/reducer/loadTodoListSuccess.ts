@@ -13,19 +13,17 @@ export const loadTodoListSuccess = actionCreatorFactory()<Payload>(
 export const loadTodoListSuccessReducer = (
   state: TodoAppState,
   { todoId, candidateOfTodoList }: Payload
-): TodoAppState => {
-  return {
-    ...state,
-    todoList: {
-      ...state.todoList,
-      byId: {
-        ...state.todoList.byId,
-        [todoId]: {
-          ...state.todoList.byId[todoId],
-          candidateOfTodoList: candidateOfTodoList
-        }
+): TodoAppState => ({
+  ...state,
+  todoList: {
+    ...state.todoList,
+    byId: {
+      ...state.todoList.byId,
+      [todoId]: {
+        ...state.todoList.byId[todoId],
+        candidateOfTodoList: candidateOfTodoList
       }
-    },
-    loading: false
-  }
-}
+    }
+  },
+  loading: false
+})
