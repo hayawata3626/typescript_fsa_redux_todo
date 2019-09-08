@@ -27,6 +27,10 @@ import {
   loadTodoListSuccess,
   loadTodoListSuccessReducer
 } from "./loadTodoListSuccess"
+import {
+  loadTodoListFailure,
+  loadTodoListFailureReducer
+} from "./loadTodoListFailure"
 
 export * from "./changeTaskTitle"
 export * from "./changeSelect"
@@ -47,3 +51,4 @@ export const todoReducer = reducerWithInitialState(initialState)
   .case(decideBulkModal, decideBulkModalReducer)
   .case(loadTodoListStart, loadTodoListStartReducer)
   .case(loadTodoListSuccess, loadTodoListSuccessReducer)
+  .case(loadTodoListFailure, loadTodoListFailureReducer)

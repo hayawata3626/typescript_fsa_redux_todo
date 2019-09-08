@@ -3,6 +3,7 @@ import { TodoList } from "../component/TodoList"
 import { useDispatch, useSelector } from "react-redux"
 import {
   bulkEditModalSelector,
+  errorSnackBarSelector,
   loadingSelector,
   selectedTodoIdsSelector,
   todoListSelector
@@ -18,6 +19,7 @@ import {
   decideBulkModal,
   openBulkEditModal
 } from "../reducer"
+import { ErrorSnackBar } from "../component/ErrorSnackBar"
 
 const App: React.FC = () => {
   const dispatch = useDispatch()
@@ -25,6 +27,7 @@ const App: React.FC = () => {
   const loading = useSelector(loadingSelector)
   const selectedTodoIds = useSelector(selectedTodoIdsSelector)
   const bulkEditModal = useSelector(bulkEditModalSelector)
+  const errorSnackBar = useSelector(errorSnackBarSelector)
 
   const handleBulkEditButtonClick = useCallback(() => {
     dispatch(openBulkEditModal({}))
@@ -69,6 +72,10 @@ const App: React.FC = () => {
         onChecked={handleCheckedChange}
         onRequestClose={handleCloseButtonClick}
         onClickDecideButton={handleDecide}
+      />
+      <ErrorSnackBar
+        open={errorSnackBar.open}
+        message={errorSnackBar.message}
       />
       {loading && <CircularProgress />}
     </div>

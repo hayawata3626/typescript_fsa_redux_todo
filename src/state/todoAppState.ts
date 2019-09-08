@@ -21,6 +21,11 @@ export type BulkEditModal = Readonly<{
   done: boolean
 }>
 
+export type ErrorSnackBar = Readonly<{
+  open: boolean
+  message: string
+}>
+
 export type TodoAppState = Readonly<{
   todoList: {
     byId: TodoById
@@ -28,6 +33,7 @@ export type TodoAppState = Readonly<{
   }
   selectedTodoIds: ReadonlyArray<number>
   bulkEditModal: BulkEditModal
+  errorSnackBar: Readonly<ErrorSnackBar>
   loading: boolean
 }>
 
@@ -56,6 +62,10 @@ export const initialState: TodoAppState = {
     open: false,
     title: "",
     done: false
+  },
+  errorSnackBar: {
+    open: false,
+    message: ""
   },
   loading: false
 }
