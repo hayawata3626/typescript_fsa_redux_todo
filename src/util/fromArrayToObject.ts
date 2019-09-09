@@ -1,8 +1,9 @@
 /* 配列からオブジェクトに変換する */
-export const fromArrayToObject = <K, T extends { id: number }>(
-  K: ReadonlyArray<T>
-): Readonly<{ [key: number]: T }> =>
-  K.reduce((obj: any | {}, data: T) => {
-    obj[data.id] = data
-    return obj
+
+export const fromArrayToObject = <T extends Readonly<{ id: number }>>(
+  items: ReadonlyArray<T>
+): Readonly<{ [id: number]: T }> =>
+  items.reduce((map: any | {}, item) => {
+    map[item.id] = item
+    return map
   }, {})
