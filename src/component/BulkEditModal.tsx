@@ -30,23 +30,29 @@ export const BulkEditModal = ({
 }: Props) => {
   const handleBackGroundClick = useCallback(() => {
     onRequestClose()
-  }, [])
+  }, [onRequestClose])
 
   const handleDialogContentClick = useCallback((e: React.ChangeEvent<{}>) => {
     e.stopPropagation()
   }, [])
 
-  const handleTextChange = useCallback((e: any) => {
-    onChangeTitle(e.target.value)
-  }, [])
+  const handleTextChange = useCallback(
+    (e: any) => {
+      onChangeTitle(e.target.value)
+    },
+    [onChangeTitle]
+  )
 
-  const handleCheckBoxChecked = useCallback((e: any, checked: boolean) => {
-    onChecked(checked)
-  }, [])
+  const handleCheckBoxChecked = useCallback(
+    (e: any, checked: boolean) => {
+      onChecked(checked)
+    },
+    [onChecked]
+  )
 
   const handleDecideButtonClick = useCallback(() => {
     onClickDecideButton()
-  }, [])
+  }, [onClickDecideButton])
 
   return (
     <Dialog open={bulkEditModal.open} onClick={handleBackGroundClick}>
