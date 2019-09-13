@@ -1,5 +1,5 @@
 import * as React from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { useCallback } from "react"
 import { TodoItem } from "../component/TodoItem"
 import { Todo } from "../state/todoAppState"

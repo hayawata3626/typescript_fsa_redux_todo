@@ -1,6 +1,6 @@
 import { Dispatch } from "redux"
 import { loadTodoListStart } from "../loadTodoListStart"
-import axios, { AxiosResponse } from "axios"
+import { AxiosResponse } from "axios"
 import { loadTodoListSuccess } from "../loadTodoListSuccess"
 import { changeTodoTitle } from "../changeTaskTitle"
 import { loadTodoListFailure } from "../loadTodoListFailure"

@@ -1,4 +1,4 @@
-import React, { useCallback } from "react"
+import React, { useCallback, useEffect } from "react"
 import { TodoList } from "../component/TodoList"
 import { useDispatch, useSelector } from "react-redux"
 import {
@@ -20,6 +20,7 @@ import {
   openBulkEditModal
 } from "../reducer"
 import { ErrorSnackBar } from "../component/ErrorSnackBar"
+import { loadInitialData } from "../network/todoApp"
 
 const App: React.FC = () => {
   const dispatch = useDispatch()
@@ -28,6 +29,12 @@ const App: React.FC = () => {
   const selectedTodoIds = useSelector(selectedTodoIdsSelector)
   const bulkEditModal = useSelector(bulkEditModalSelector)
   const errorSnackBar = useSelector(errorSnackBarSelector)
+
+  useEffect(() => {
+    ;(async () => {
+      const { data } = await loadInitialData()
+    })()
+  }, [])
 
   const handleBulkEditButtonClick = useCallback(() => {
     dispatch(openBulkEditModal({}))
