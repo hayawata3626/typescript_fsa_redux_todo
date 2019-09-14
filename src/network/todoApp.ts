@@ -7,5 +7,5 @@ export const loadCandidateOfTodoList = (): Promise<AxiosResponse<any>> =>
   axios.get(`${baseUrl}/todoList`)
 
 /* 初期データ読み込み用 */
-export const loadInitialData = (): Promise<AxiosResponse<any>> =>
+export const fetchInitialData = (): Promise<AxiosResponse<any>> =>
   axios.get(`${baseUrl}/todoList`)

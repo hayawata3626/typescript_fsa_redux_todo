@@ -39,22 +39,7 @@ export type TodoAppState = Readonly<{
 
 export const initialState: TodoAppState = {
   todoList: {
-    byId: {
-      1: {
-        id: 1,
-        title: "ラーメン食べる",
-        selected: false,
-        done: false,
-        candidateOfTodoList: []
-      },
-      2: {
-        id: 2,
-        title: "髪を切る",
-        selected: false,
-        done: false,
-        candidateOfTodoList: []
-      }
-    },
+    byId: {},
     allIds: [1, 2]
   },
   selectedTodoIds: [],

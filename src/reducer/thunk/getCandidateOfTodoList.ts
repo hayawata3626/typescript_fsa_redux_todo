@@ -11,15 +11,15 @@ type Payload = {
   title: string
 }
 
-export const getCandidateOfTodoList = ({ id, title }: Payload) => {
-  return async (dispatch: Dispatch) => {
-    dispatch(changeTodoTitle({ id: id, title: title }))
-    try {
-      dispatch(loadTodoListStart({}))
-      const { data }: AxiosResponse = await loadCandidateOfTodoList()
-      dispatch(loadTodoListSuccess({ todoId: id, candidateOfTodoList: data }))
-    } catch (e) {
-      dispatch(loadTodoListFailure({ message: e.toString() }))
-    }
+export const getCandidateOfTodoList = ({ id, title }: Payload) => async (
+  dispatch: Dispatch
+) => {
+  dispatch(changeTodoTitle({ id: id, title: title }))
+  try {
+    dispatch(loadTodoListStart({}))
+    const { data }: AxiosResponse = await loadCandidateOfTodoList()
+    dispatch(loadTodoListSuccess({ todoId: id, candidateOfTodoList: data }))
+  } catch (e) {
+    dispatch(loadTodoListFailure({ message: e.toString() }))
   }
 }

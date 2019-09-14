@@ -20,7 +20,8 @@ import {
   openBulkEditModal
 } from "../reducer"
 import { ErrorSnackBar } from "../component/ErrorSnackBar"
-import { loadInitialData } from "../network/todoApp"
+import { fetchInitialData } from "../network/todoApp"
+import { loadInitialData } from "../reducer/thunk/loadInitialData"
 
 const App: React.FC = () => {
   const dispatch = useDispatch()
@@ -32,7 +33,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     ;(async () => {
-      const { data } = await loadInitialData()
+      await dispatch(loadInitialData())
     })()
   }, [])
 

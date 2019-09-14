@@ -31,6 +31,10 @@ import {
   loadTodoListFailure,
   loadTodoListFailureReducer
 } from "./loadTodoListFailure"
+import {
+  loadInitialDataReducer,
+  loadInitialDataSuccess
+} from "./loadInitialDataSuccess"
 
 export * from "./changeTaskTitle"
 export * from "./changeSelect"
@@ -40,6 +44,7 @@ export * from "./changeTitleOfBulkEditModal"
 export * from "./checkedChangeOfBulkEditModal"
 export * from "./decideBulkModal"
 export * from "./thunk/getCandidateOfTodoList"
+export * from "./thunk/loadInitialData"
 
 export const todoReducer = reducerWithInitialState(initialState)
   .case(changeTodoTitle, changeTaskTitleReducer)
@@ -52,3 +57,4 @@ export const todoReducer = reducerWithInitialState(initialState)
   .case(loadTodoListStart, loadTodoListStartReducer)
   .case(loadTodoListSuccess, loadTodoListSuccessReducer)
   .case(loadTodoListFailure, loadTodoListFailureReducer)
+  .case(loadInitialDataSuccess, loadInitialDataReducer)
