@@ -1,6 +1,5 @@
 import actionCreatorFactory from "typescript-fsa"
 import { TodoAppState, TodoById } from "../state/todoAppState"
-import { fromArrayToObject } from "../util/fromArrayToObject"
 
 type Payload = {
   todoList: TodoById
@@ -19,6 +18,7 @@ export const loadInitialDataReducer = (
     todoList: {
       ...state.todoList,
       byId: todoList
-    }
+    },
+    loading: false
   }
 }

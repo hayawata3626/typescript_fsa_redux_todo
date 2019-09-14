@@ -4,10 +4,9 @@
     <list default="true" id="cd4cf886-72f2-413c-aa77-145cad6438eb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/container/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/network/todoApp.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/network/todoApp.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducer/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducer/thunk/getCandidateOfTodoList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/thunk/getCandidateOfTodoList.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/todoAppState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/todoAppState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/loadInitialDataSuccess.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/loadInitialDataSuccess.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/thunk/loadInitialData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/thunk/loadInitialData.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +100,7 @@
       <updated>1566485081081</updated>
       <workItem from="1566485083817" duration="69880000" />
       <workItem from="1568363116220" duration="1298000" />
-      <workItem from="1568409023573" duration="5534000" />
+      <workItem from="1568409023573" duration="7259000" />
     </task>
     <servers />
   </component>

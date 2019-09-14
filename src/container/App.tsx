@@ -65,27 +65,32 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <TodoList todoList={_.toArray(todoList.byId)} />
-      <AppBar position="sticky">
-        <Toolbar>
-          <Button color="inherit" onClick={handleBulkEditButtonClick}>
-            一括編集
-          </Button>
-        </Toolbar>
-      </AppBar>
-      <BulkEditModal
-        selectedTodoIds={selectedTodoIds}
-        bulkEditModal={bulkEditModal}
-        onChangeTitle={handleTitleChange}
-        onChecked={handleCheckedChange}
-        onRequestClose={handleCloseButtonClick}
-        onClickDecideButton={handleDecide}
-      />
-      <ErrorSnackBar
-        open={errorSnackBar.open}
-        message={errorSnackBar.message}
-      />
-      {loading && <CircularProgress />}
+      {loading ? (
+        <CircularProgress />
+      ) : (
+        <>
+          <TodoList todoList={_.toArray(todoList.byId)} />
+          <AppBar position="sticky">
+            <Toolbar>
+              <Button color="inherit" onClick={handleBulkEditButtonClick}>
+                一括編集
+              </Button>
+            </Toolbar>
+          </AppBar>
+          <BulkEditModal
+            selectedTodoIds={selectedTodoIds}
+            bulkEditModal={bulkEditModal}
+            onChangeTitle={handleTitleChange}
+            onChecked={handleCheckedChange}
+            onRequestClose={handleCloseButtonClick}
+            onClickDecideButton={handleDecide}
+          />
+          <ErrorSnackBar
+            open={errorSnackBar.open}
+            message={errorSnackBar.message}
+          />
+        </>
+      )}
     </div>
   )
 }
