@@ -1,10 +1,10 @@
 import { changeTodoTitle, todoReducer } from "./index"
-import { initialState, TodoAppState } from "../state/todoAppState"
+import { initialState, Todo, TodoAppState } from "../state/todoAppState"
 import { TodoItemFactory } from "../test"
 
 describe("changeTaskTitle", () => {
   let state: TodoAppState
-  const todoItem = TodoItemFactory.build()
+  const todoItem: Todo = TodoItemFactory.build()
 
   beforeEach(() => {
     state = {
