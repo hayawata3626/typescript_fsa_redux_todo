@@ -12,12 +12,15 @@ import { useCallback } from "react"
 type Props = {
   open: boolean
   title: string
+
+  onTitleChange: (title: string) => void
   onClickDecideButton: () => void
   onRequestClose: () => void
 }
 export const AddTodoModal = ({
   open,
   title,
+  onTitleChange,
   onClickDecideButton,
   onRequestClose
 }: Props) => {
@@ -29,7 +32,9 @@ export const AddTodoModal = ({
     e.stopPropagation()
   }, [])
 
-  const handleTextChange = useCallback(() => {}, [])
+  const handleTextChange = useCallback(e => {
+    onTitleChange(e.target.value)
+  }, [])
 
   return (
     <Dialog open={open} onClick={handleBackGroundClick}>

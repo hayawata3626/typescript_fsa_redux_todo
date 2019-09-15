@@ -1,5 +1,6 @@
 import actionCreatorFactory from "typescript-fsa"
 import { TodoAppState, TodoById } from "../state/todoAppState"
+import _ from "lodash"
 
 type Payload = {
   todoList: TodoById
@@ -17,7 +18,8 @@ export const loadInitialDataReducer = (
     ...state,
     todoList: {
       ...state.todoList,
-      byId: todoList
+      byId: todoList,
+      allIds: _.toArray(_.map(todoList, todo => todo.id))
     },
     loading: false
   }

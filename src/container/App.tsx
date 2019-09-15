@@ -25,6 +25,7 @@ import {
 import { ErrorSnackBar } from "../component/ErrorSnackBar"
 import AddIcon from "@material-ui/icons/Add"
 import { AddTodoModal } from "../component/AddTodoModal"
+import { changeTitleOfAddTodoModal } from "../reducer/changeTitleOfAddTodoModal"
 
 const App: React.FC = () => {
   const dispatch = useDispatch()
@@ -75,6 +76,10 @@ const App: React.FC = () => {
     dispatch(openAddTodoModal({}))
   }, [])
 
+  const handleTitleOfAddTodoModalChange = useCallback((title: string) => {
+    dispatch(changeTitleOfAddTodoModal({ title }))
+  }, [])
+
   return (
     <div className="App">
       <Fab color="primary" aria-label="add">
@@ -103,6 +108,7 @@ const App: React.FC = () => {
           <AddTodoModal
             open={addTodoModal.open}
             title={addTodoModal.title}
+            onTitleChange={handleTitleOfAddTodoModalChange}
             onClickDecideButton={handleAddTodoModalDecideButtonClick}
             onRequestClose={handleAddTodoModalRequestClose}
           />

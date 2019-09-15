@@ -46,7 +46,7 @@ export type TodoAppState = Readonly<{
 export const initialState: TodoAppState = {
   todoList: {
     byId: {},
-    allIds: [1, 2]
+    allIds: []
   },
   selectedTodoIds: [],
   bulkEditModal: {
