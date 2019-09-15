@@ -43,6 +43,7 @@ import {
   loadInitialDataFailure,
   loadInitialDataFailureReducer
 } from "./loadInitialDataFailure"
+import { openAddTodoModal, openAddTodoModalReducer } from "./openAddTodoModal"
 
 export * from "./changeTaskTitle"
 export * from "./changeSelect"
@@ -56,6 +57,7 @@ export * from "./thunk/loadInitialData"
 export * from "./loadInitialDataStart"
 export * from "./loadInitialDataSuccess"
 export * from "./loadInitialDataFailure"
+export * from "./openAddTodoModal"
 
 export const todoReducer = reducerWithInitialState(initialState)
   .case(changeTodoTitle, changeTaskTitleReducer)
@@ -71,3 +73,4 @@ export const todoReducer = reducerWithInitialState(initialState)
   .case(loadInitialDataStart, loadInitialDataStartReducer)
   .case(loadInitialDataSuccess, loadInitialDataReducer)
   .case(loadInitialDataFailure, loadInitialDataFailureReducer)
+  .case(openAddTodoModal, openAddTodoModalReducer)

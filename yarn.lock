@@ -1355,6 +1355,13 @@
     react-transition-group "^4.0.0"
     warning "^4.0.1"
 
+"@material-ui/icons@^4.4.1":
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/@material-ui/icons/-/icons-4.4.1.tgz#a09d53275a5d73a77ee621f91c005a1793432df7"
+  integrity sha512-ilo6rSgsI3B5L7s1H3tBS1x77sJqPql3QJDYzVi2TVluZLCTfRKjpbYYDUwolEAQC0MzXLjVbXHqJ97VeJqpmQ==
+  dependencies:
+    "@babel/runtime" "^7.4.4"
+
 "@material-ui/styles@^4.3.3":
   version "4.3.3"
   resolved "https://registry.yarnpkg.com/@material-ui/styles/-/styles-4.3.3.tgz#39867dd6f3779a8326075e097d72208d3c5b4977"
@@ -1973,6 +1980,11 @@
   integrity sha512-oV9qiCuowhVR/ehqUobWWkXJjohontbDGLV88Be/7T4bqMQ3kjXwkFNL7doIIqlbg3X2PC5WPziZ8/j/QHNQ4A==
   dependencies:
     redux "^3.6.0"
+
+"@types/rosie@^0.0.36":
+  version "0.0.36"
+  resolved "https://registry.yarnpkg.com/@types/rosie/-/rosie-0.0.36.tgz#b72ef533ee3aaf3a1cc0460ed397ad225f08240a"
+  integrity sha512-Laco637XkrSaVjvyT+gCeoKhyppAtZHq6bhA+i7Enn3aMCW1RojULHUfpiM4pRRCc1jrZ38hXyqGNq4OF9neiw==
 
 "@types/stack-utils@^1.0.1":
   version "1.0.1"
@@ -11585,6 +11597,11 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
   dependencies:
     hash-base "^3.0.0"
     inherits "^2.0.1"
+
+rosie@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/rosie/-/rosie-2.0.1.tgz#c250c4787ce450b72aa9eff26509f68589814fa2"
+  integrity sha1-wlDEeHzkULcqqe/yZQn2hYmBT6I=
 
 rsvp@^4.8.4:
   version "4.8.5"

@@ -17,3 +17,6 @@ export const errorSnackBarSelector = (state: AppState) =>
   state.todoApp.errorSnackBar
 
 export const loadingSelector = (state: AppState) => state.todoApp.loading
+
+export const openAddTodoModalSelector = (state: AppState) =>
+  state.todoApp.addTodoModal

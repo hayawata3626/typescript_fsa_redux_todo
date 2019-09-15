@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd4cf886-72f2-413c-aa77-145cad6438eb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/container/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducer/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducer/loadInitialDataSuccess.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/loadInitialDataSuccess.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducer/thunk/loadInitialData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/thunk/loadInitialData.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/selector.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/todoAppState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/todoAppState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,27 +25,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="React Container" />
-        <option value="Reducer Unit Test" />
         <option value="ReactComponent" />
+        <option value="Reducer Unit Test" />
         <option value="TypeScript File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>s</find>
-      <find>TodoItemContainer</find>
-      <find>TState</find>
-      <find>conso</find>
-      <find>console</find>
-      <find>CHANGE_TODO_TITLE</find>
-      <find>emo</find>
-      <find>getCandidateOfTodoList</find>
-      <find>changeTaskTitleReducer</find>
-      <find>dispath</find>
-      <find>selected</find>
-      <find>selectedTodoIds</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -64,10 +51,11 @@
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="prettierjs.PrettierConfiguration.Package" value="/usr/local/lib/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
@@ -88,6 +76,41 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="Jest.changeTaskTitle.titleが入力した値になっていること">
+    <configuration name="changeTaskTitle" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/reducer/changeTaskTitle.spec.ts" />
+      <test-names>
+        <test-name value="changeTaskTitle" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="changeTaskTitle.titleが入力した値になっていること" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/reducer/changeTaskTitle.spec.ts" />
+      <test-names>
+        <test-name value="changeTaskTitle" />
+        <test-name value="titleが入力した値になっていること" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.changeTaskTitle.titleが入力した値になっていること" />
+        <item itemvalue="Jest.changeTaskTitle" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -100,7 +123,7 @@
       <updated>1566485081081</updated>
       <workItem from="1566485083817" duration="69880000" />
       <workItem from="1568363116220" duration="1298000" />
-      <workItem from="1568409023573" duration="7259000" />
+      <workItem from="1568409023573" duration="12990000" />
     </task>
     <servers />
   </component>

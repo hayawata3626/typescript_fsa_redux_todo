@@ -5,23 +5,26 @@ import {
   bulkEditModalSelector,
   errorSnackBarSelector,
   loadingSelector,
+  openAddTodoModalSelector,
   selectedTodoIdsSelector,
   todoListSelector
 } from "../selector"
 import _ from "lodash"
 import AppBar from "@material-ui/core/AppBar"
-import { Button, CircularProgress, Toolbar } from "@material-ui/core"
+import { Button, CircularProgress, Fab, Toolbar } from "@material-ui/core"
 import { BulkEditModal } from "../component/BulkEditModal"
 import {
   changeTitleOfBulkEditModal,
   checkedChangeOfBulkEditModal,
   closeBulkEditModal,
   decideBulkModal,
+  loadInitialData,
+  openAddTodoModal,
   openBulkEditModal
 } from "../reducer"
 import { ErrorSnackBar } from "../component/ErrorSnackBar"
-import { fetchInitialData } from "../network/todoApp"
-import { loadInitialData } from "../reducer/thunk/loadInitialData"
+import AddIcon from "@material-ui/icons/Add"
+import { AddTodoModal } from "../component/AddTodoModal"
 
 const App: React.FC = () => {
   const dispatch = useDispatch()
@@ -30,6 +33,7 @@ const App: React.FC = () => {
   const selectedTodoIds = useSelector(selectedTodoIdsSelector)
   const bulkEditModal = useSelector(bulkEditModalSelector)
   const errorSnackBar = useSelector(errorSnackBarSelector)
+  const addTodoModal = useSelector(openAddTodoModalSelector)
 
   useEffect(() => {
     ;(async () => {
@@ -63,8 +67,19 @@ const App: React.FC = () => {
     dispatch(decideBulkModal({}))
   }, [dispatch])
 
+  const handleAddTodoModalDecideButtonClick = useCallback(() => {}, [])
+
+  const handleAddTodoModalRequestClose = useCallback(() => {}, [])
+
+  const addTodoButtonClick = useCallback(() => {
+    dispatch(openAddTodoModal({}))
+  }, [])
+
   return (
     <div className="App">
+      <Fab color="primary" aria-label="add">
+        <AddIcon onClick={addTodoButtonClick} />
+      </Fab>
       {loading ? (
         <CircularProgress />
       ) : (
@@ -84,6 +99,12 @@ const App: React.FC = () => {
             onChecked={handleCheckedChange}
             onRequestClose={handleCloseButtonClick}
             onClickDecideButton={handleDecide}
+          />
+          <AddTodoModal
+            open={addTodoModal.open}
+            title={addTodoModal.title}
+            onClickDecideButton={handleAddTodoModalDecideButtonClick}
+            onRequestClose={handleAddTodoModalRequestClose}
           />
           <ErrorSnackBar
             open={errorSnackBar.open}
