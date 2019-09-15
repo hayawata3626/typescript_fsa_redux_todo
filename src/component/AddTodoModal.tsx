@@ -24,7 +24,9 @@ export const AddTodoModal = ({
   onClickDecideButton,
   onRequestClose
 }: Props) => {
-  const handleDecideButtonClick = useCallback(() => {}, [])
+  const handleDecideButtonClick = useCallback(() => {
+    onClickDecideButton()
+  }, [])
 
   const handleBackGroundClick = useCallback(() => {}, [])
 
@@ -41,6 +43,7 @@ export const AddTodoModal = ({
       <DialogContent onClick={handleDialogContentClick}>
         <TextField
           placeholder={"タイトルをクリック"}
+          value={title}
           onChange={handleTextChange}
         />
         <Button color={"secondary"} onClick={handleDecideButtonClick}>

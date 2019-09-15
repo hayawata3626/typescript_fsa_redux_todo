@@ -26,6 +26,7 @@ import { ErrorSnackBar } from "../component/ErrorSnackBar"
 import AddIcon from "@material-ui/icons/Add"
 import { AddTodoModal } from "../component/AddTodoModal"
 import { changeTitleOfAddTodoModal } from "../reducer/changeTitleOfAddTodoModal"
+import { decideAddTodo } from "../reducer/decideAddTodo"
 
 const App: React.FC = () => {
   const dispatch = useDispatch()
@@ -68,7 +69,9 @@ const App: React.FC = () => {
     dispatch(decideBulkModal({}))
   }, [dispatch])
 
-  const handleAddTodoModalDecideButtonClick = useCallback(() => {}, [])
+  const handleAddTodoModalDecideButtonClick = useCallback(() => {
+    dispatch(decideAddTodo({}))
+  }, [dispatch])
 
   const handleAddTodoModalRequestClose = useCallback(() => {}, [])
 
