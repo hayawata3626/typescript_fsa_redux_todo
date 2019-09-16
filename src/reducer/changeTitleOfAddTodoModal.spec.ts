@@ -1,6 +1,6 @@
-import { changeTitleOfAddTodoModal } from "./changeTitleOfAddTodoModal"
 import { initialState, TodoAppState } from "../state/todoAppState"
 import { todoReducer } from "./index"
+import { changeTitleOfAddTodoModal } from "./changeTitleOfAddTodoModal"
 
 describe("changeTitleOfAddTodoModal", () => {
   let state: TodoAppState
@@ -12,7 +12,7 @@ describe("changeTitleOfAddTodoModal", () => {
     )
   })
 
-  it("になっていること", () => {
+  it("addTodoModalのtitleが入力した値になっていること", () => {
     expect(state.addTodoModal.title).toBe("髪を切る")
   })
 })
