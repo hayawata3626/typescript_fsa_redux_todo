@@ -28,7 +28,7 @@ import { AddTodoModal } from "../component/AddTodoModal"
 import { changeTitleOfAddTodoModal } from "../reducer/changeTitleOfAddTodoModal"
 import { decideAddTodo } from "../reducer/decideAddTodo"
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
   const dispatch = useDispatch()
   const todoList = useSelector(todoListSelector)
   const loading = useSelector(loadingSelector)
@@ -124,5 +124,3 @@ const App: React.FC = () => {
     </div>
   )
 }
-
-export default App
