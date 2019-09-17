@@ -2,6 +2,7 @@ import { TodoAppState } from "../state/todoAppState"
 import actionCreatorFactory from "typescript-fsa"
 import _ from "lodash"
 import { fromArrayToObject } from "../util/fromArrayToObject"
+import produce, { Draft } from "immer"
 
 type Payload = {}
 
@@ -12,16 +13,10 @@ export const closeBulkEditModal = actionCreatorFactory()<Payload>(
 export const closeBulkEditModalReducer = (
   state: TodoAppState,
   {  }: Payload
-): TodoAppState => ({
-  ...state,
-  todoList: {
-    ...state.todoList,
-    byId: fromArrayToObject(
-      _.map(state.todoList.byId, todo => ({ ...todo, selected: false }))
+): TodoAppState =>
+  produce(state, (draftState: Draft<TodoAppState>) => {
+    draftState.todoList.byId = fromArrayToObject(
+      _.map(draftState.todoList.byId, todo => ({ ...todo, selected: false }))
     )
-  },
-  bulkEditModal: {
-    ...state.bulkEditModal,
-    open: false
-  }
-})
+    draftState.bulkEditModal.open = false
+  })
