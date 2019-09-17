@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd4cf886-72f2-413c-aa77-145cad6438eb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/AddTodoModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/AddTodoModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/TodoItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/TodoItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/TodoList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/container/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducer/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/selector.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/todoAppState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/todoAppState.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +25,8 @@
       <list>
         <option value="React Container" />
         <option value="ReactComponent" />
-        <option value="Reducer Unit Test" />
         <option value="TypeScript File" />
+        <option value="Reducer Unit Test" />
       </list>
     </option>
   </component>
@@ -104,6 +103,10 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Jest.changeTaskTitle" />
+      <item itemvalue="Jest.changeTaskTitle.titleが入力した値になっていること" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Jest.changeTaskTitle.titleが入力した値になっていること" />
@@ -149,7 +152,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

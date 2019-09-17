@@ -28,7 +28,9 @@ export const AddTodoModal = ({
     onClickDecideButton()
   }, [])
 
-  const handleBackGroundClick = useCallback(() => {}, [])
+  const handleBackGroundClick = useCallback(() => {
+    onRequestClose()
+  }, [])
 
   const handleDialogContentClick = useCallback(e => {
     e.stopPropagation()
@@ -36,6 +38,10 @@ export const AddTodoModal = ({
 
   const handleTextChange = useCallback(e => {
     onTitleChange(e.target.value)
+  }, [])
+
+  const handleCancelButtonClick = useCallback(() => {
+    onRequestClose()
   }, [])
 
   return (
@@ -46,8 +52,11 @@ export const AddTodoModal = ({
           value={title}
           onChange={handleTextChange}
         />
-        <Button color={"secondary"} onClick={handleDecideButtonClick}>
+        <Button color={"primary"} onClick={handleDecideButtonClick}>
           決定
+        </Button>
+        <Button color={"secondary"} onClick={handleCancelButtonClick}>
+          キャンセル
         </Button>
       </DialogContent>
     </Dialog>

@@ -32,7 +32,7 @@ export const TodoItem = ({
   )
 
   return (
-    <Card>
+    <Card style={{ margin: "0 auto 20px auto", width: "600px" }}>
       <Checkbox checked={todo.selected} onChange={handleCheckedChange} />
       <TextField
         type={"text"}

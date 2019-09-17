@@ -7,7 +7,7 @@ type Props = {
 }
 
 export const TodoList = ({ todoList }: Props) => (
-  <div>
+  <div style={{ marginTop: "90px" }}>
     {todoList.map((todo, index) => (
       <TodoItemContainer todo={todo} key={index} />
     ))}

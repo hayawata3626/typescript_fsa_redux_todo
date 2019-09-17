@@ -16,6 +16,7 @@ import { BulkEditModal } from "../component/BulkEditModal"
 import {
   changeTitleOfBulkEditModal,
   checkedChangeOfBulkEditModal,
+  closeAddTodoModal,
   closeBulkEditModal,
   decideBulkModal,
   loadInitialData,
@@ -27,6 +28,7 @@ import AddIcon from "@material-ui/icons/Add"
 import { AddTodoModal } from "../component/AddTodoModal"
 import { changeTitleOfAddTodoModal } from "../reducer/changeTitleOfAddTodoModal"
 import { decideAddTodo } from "../reducer/decideAddTodo"
+import { css } from "@emotion/core"
 
 export const App: React.FC = () => {
   const dispatch = useDispatch()
@@ -73,7 +75,9 @@ export const App: React.FC = () => {
     dispatch(decideAddTodo({}))
   }, [dispatch])
 
-  const handleAddTodoModalRequestClose = useCallback(() => {}, [])
+  const handleAddTodoModalRequestClose = useCallback(() => {
+    dispatch(closeAddTodoModal({}))
+  }, [dispatch])
 
   const addTodoButtonClick = useCallback(() => {
     dispatch(openAddTodoModal({}))
@@ -85,7 +89,11 @@ export const App: React.FC = () => {
 
   return (
     <div className="App">
-      <Fab color="primary" aria-label="add">
+      <Fab
+        color="primary"
+        aria-label="add"
+        style={{ position: "fixed", bottom: "10px", right: "20px" }}
+      >
         <AddIcon onClick={addTodoButtonClick} />
       </Fab>
       {loading ? (
@@ -93,7 +101,7 @@ export const App: React.FC = () => {
       ) : (
         <>
           <TodoList todoList={_.toArray(todoList.byId)} />
-          <AppBar position="sticky">
+          <AppBar position="fixed">
             <Toolbar>
               <Button color="inherit" onClick={handleBulkEditButtonClick}>
                 一括編集
