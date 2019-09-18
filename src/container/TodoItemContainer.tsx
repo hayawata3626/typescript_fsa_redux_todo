@@ -4,6 +4,7 @@ import { useCallback } from "react"
 import { TodoItem } from "../component/TodoItem"
 import { Todo } from "../state/todoAppState"
 import { changeSelect } from "../reducer"
+import { selectTodoItem } from "../reducer/selectTodoItem"
 
 type Props = Readonly<{
   todo: Todo
@@ -23,10 +24,18 @@ export const TodoItemContainer = ({ todo }: Props) => {
     [dispatch]
   )
 
+  const handleItemSelect = useCallback(
+    (id: number, selected: boolean) => {
+      dispatch(selectTodoItem({ id: id, selected: selected }))
+    },
+    [dispatch]
+  )
+
   return (
     <TodoItem
       todo={todo}
       onChangeTitle={handleTitleChange}
+      onItemSelect={handleItemSelect}
       onCheckedChange={handleCheckedChange}
     />
   )

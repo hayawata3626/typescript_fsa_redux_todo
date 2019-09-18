@@ -15,7 +15,7 @@ export const changeSelectReducer = (
   { id, selected }: Payload
 ): TodoAppState =>
   produce(state, (draftState: Draft<TodoAppState>) => {
-    draftState.todoList.byId[id].selected = selected
+    draftState.todoList.byId[id].done = selected
     draftState.selectedTodoIds = filterTodoIds(
       id,
       selected,

@@ -25,7 +25,7 @@ describe("changeSelect", () => {
     )
   })
 
-  it("todoItemのselectedがtrueになっていること", () => {
-    expect(state.todoList.byId[todoItem.id].selected).toBe(true)
+  it("todoItemのdoneがtrueになっていること", () => {
+    expect(state.todoList.byId[todoItem.id].done).toBe(true)
   })
 })
