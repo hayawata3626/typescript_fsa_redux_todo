@@ -1,5 +1,6 @@
 import { TodoAppState } from "../state/todoAppState"
 import actionCreatorFactory from "typescript-fsa"
+import produce, { Draft } from "immer"
 
 type Payload = {}
 
@@ -8,9 +9,8 @@ export const loadInitialDataStart = actionCreatorFactory()<Payload>(
 )
 
 export const loadInitialDataStartReducer = (
-  state: TodoAppState,
-  {  }: Payload
-): TodoAppState => ({
-  ...state,
-  loading: true
-})
+  state: TodoAppState
+): TodoAppState =>
+  produce(state, (draftState: Draft<TodoAppState>) => {
+    draftState.loading = true
+  })

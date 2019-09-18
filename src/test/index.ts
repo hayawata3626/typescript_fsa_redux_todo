@@ -6,8 +6,7 @@ export const TodoItemFactory = Factory.define<Todo>("TodoItem")
     id: 1,
     title: "Todo",
     selected: false,
-    done: false,
-    candidateOfTodoList: []
+    done: false
   })
   .sequence("id", index => `Todo_${index}`)
   .sequence("title", index => `title_${index}`)

@@ -8,8 +8,7 @@ export const openBulkEditModal = actionCreatorFactory()<Payload>(
 )
 
 export const openBulkEditModalReducer = (
-  state: TodoAppState,
-  {  }: Payload
+  state: TodoAppState
 ): TodoAppState => ({
   ...state,
   bulkEditModal: {

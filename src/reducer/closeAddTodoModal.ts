@@ -8,10 +8,7 @@ export const closeAddTodoModal = actionCreatorFactory()<Payload>(
   "closeAddTodoModal"
 )
 
-export const closeAddTodoModalReducer = (
-  state: TodoAppState,
-  {  }: Payload
-): TodoAppState =>
+export const closeAddTodoModalReducer = (state: TodoAppState): TodoAppState =>
   produce(state, (draftState: Draft<TodoAppState>) => {
     draftState.addTodoModal.open = false
   })

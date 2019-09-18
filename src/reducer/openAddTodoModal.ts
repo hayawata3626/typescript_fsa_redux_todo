@@ -7,10 +7,7 @@ export const openAddTodoModal = actionCreatorFactory()<Payload>(
   "openAddTodoModal"
 )
 
-export const openAddTodoModalReducer = (
-  state: TodoAppState,
-  {  }: Payload
-): TodoAppState => ({
+export const openAddTodoModalReducer = (state: TodoAppState): TodoAppState => ({
   ...state,
   addTodoModal: {
     ...state.addTodoModal,

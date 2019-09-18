@@ -10,10 +10,7 @@ export const closeBulkEditModal = actionCreatorFactory()<Payload>(
   "closeBulkEditModal"
 )
 
-export const closeBulkEditModalReducer = (
-  state: TodoAppState,
-  {  }: Payload
-): TodoAppState =>
+export const closeBulkEditModalReducer = (state: TodoAppState): TodoAppState =>
   produce(state, (draftState: Draft<TodoAppState>) => {
     draftState.todoList.byId = fromArrayToObject(
       _.map(draftState.todoList.byId, todo => ({ ...todo, selected: false }))

@@ -1,14 +1,8 @@
-export type CandidateOfTodo = Readonly<{
-  id: number
-  body: string
-}>
-
 export type Todo = Readonly<{
   id: number
   title: string
   done: boolean
   selected: boolean
-  candidateOfTodoList: ReadonlyArray<CandidateOfTodo>
 }>
 
 export type TodoById = Readonly<{

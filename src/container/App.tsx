@@ -28,7 +28,6 @@ import AddIcon from "@material-ui/icons/Add"
 import { AddTodoModal } from "../component/AddTodoModal"
 import { changeTitleOfAddTodoModal } from "../reducer/changeTitleOfAddTodoModal"
 import { decideAddTodo } from "../reducer/decideAddTodo"
-import { css } from "@emotion/core"
 
 export const App: React.FC = () => {
   const dispatch = useDispatch()
@@ -43,7 +42,7 @@ export const App: React.FC = () => {
     ;(async () => {
       await dispatch(loadInitialData())
     })()
-  }, [])
+  }, [dispatch])
 
   const handleBulkEditButtonClick = useCallback(() => {
     dispatch(openBulkEditModal({}))
@@ -81,11 +80,14 @@ export const App: React.FC = () => {
 
   const addTodoButtonClick = useCallback(() => {
     dispatch(openAddTodoModal({}))
-  }, [])
+  }, [dispatch])
 
-  const handleTitleOfAddTodoModalChange = useCallback((title: string) => {
-    dispatch(changeTitleOfAddTodoModal({ title }))
-  }, [])
+  const handleTitleOfAddTodoModalChange = useCallback(
+    (title: string) => {
+      dispatch(changeTitleOfAddTodoModal({ title }))
+    },
+    [dispatch]
+  )
 
   return (
     <div className="App">

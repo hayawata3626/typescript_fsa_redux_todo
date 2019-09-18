@@ -1,12 +1,5 @@
 import * as React from "react"
-import {
-  Button,
-  Checkbox,
-  Dialog,
-  DialogContent,
-  TextField,
-  Typography
-} from "@material-ui/core"
+import { Button, Dialog, DialogContent, TextField } from "@material-ui/core"
 import { useCallback } from "react"
 
 type Props = {
@@ -26,23 +19,26 @@ export const AddTodoModal = ({
 }: Props) => {
   const handleDecideButtonClick = useCallback(() => {
     onClickDecideButton()
-  }, [])
+  }, [onClickDecideButton])
 
   const handleBackGroundClick = useCallback(() => {
     onRequestClose()
-  }, [])
+  }, [onRequestClose])
 
   const handleDialogContentClick = useCallback(e => {
     e.stopPropagation()
   }, [])
 
-  const handleTextChange = useCallback(e => {
-    onTitleChange(e.target.value)
-  }, [])
+  const handleTextChange = useCallback(
+    e => {
+      onTitleChange(e.target.value)
+    },
+    [onTitleChange]
+  )
 
   const handleCancelButtonClick = useCallback(() => {
     onRequestClose()
-  }, [])
+  }, [onRequestClose])
 
   return (
     <Dialog open={open} onClick={handleBackGroundClick}>

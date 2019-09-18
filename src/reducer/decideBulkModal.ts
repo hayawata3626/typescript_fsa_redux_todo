@@ -14,10 +14,7 @@ export const decideBulkModal = actionCreatorFactory()<Payload>(
   "decideBulkModal"
 )
 
-export const decideBulkModalReducer = (
-  state: TodoAppState,
-  {  }: Payload
-): TodoAppState => ({
+export const decideBulkModalReducer = (state: TodoAppState): TodoAppState => ({
   ...state,
   todoList: {
     ...state.todoList,

@@ -6,6 +6,5 @@ export const toVersion = (todo: TodoJsonModel): Todo => ({
   id: todo.id,
   title: todo.body,
   done: false,
-  selected: false,
-  candidateOfTodoList: []
+  selected: false
 })
