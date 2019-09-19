@@ -1,8 +1,8 @@
 import { Dispatch } from "redux"
-import { loadTodoListStart } from "../loadTodoListStart"
-import { loadTodoListSuccess } from "../loadTodoListSuccess"
-import { changeTodoTitle } from "../changeTaskTitle"
-import { loadTodoListFailure } from "../loadTodoListFailure"
+import { loadTodoListStart } from "../reducer/loadTodoListStart"
+import { loadTodoListSuccess } from "../reducer/loadTodoListSuccess"
+import { changeTodoTitle } from "../reducer/changeTaskTitle"
+import { loadTodoListFailure } from "../reducer/loadTodoListFailure"
 
 type Payload = {
   id: number
