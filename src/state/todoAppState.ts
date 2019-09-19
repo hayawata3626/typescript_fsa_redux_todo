@@ -1,3 +1,9 @@
+export enum FilterType {
+  All,
+  Active,
+  Complete
+}
+
 export type Todo = Readonly<{
   id: number
   title: string
@@ -31,6 +37,7 @@ export type TodoAppState = Readonly<{
     allIds: ReadonlyArray<number>
   }
   selectedTodoIds: ReadonlyArray<number>
+  filterType: FilterType
   bulkEditModal: BulkEditModal
   addTodoModal: AddTodoModal
   errorSnackBar: Readonly<ErrorSnackBar>
@@ -43,6 +50,7 @@ export const initialState: TodoAppState = {
     allIds: []
   },
   selectedTodoIds: [],
+  filterType: FilterType.All,
   bulkEditModal: {
     open: false,
     title: "",

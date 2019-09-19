@@ -7,13 +7,22 @@ import {
   loadingSelector,
   openAddTodoModalSelector,
   selectedTodoIdsSelector,
+  taskFilterSelector,
   todoListSelector
 } from "../selector"
 import _ from "lodash"
 import AppBar from "@material-ui/core/AppBar"
-import { Button, CircularProgress, Fab, Toolbar } from "@material-ui/core"
+import {
+  Button,
+  CircularProgress,
+  Fab,
+  FormControlLabel,
+  Switch,
+  Toolbar
+} from "@material-ui/core"
 import { BulkEditModal } from "../component/BulkEditModal"
 import {
+  changeTaskFilter,
   changeTitleOfBulkEditModal,
   checkedChangeOfBulkEditModal,
   closeAddTodoModal,
@@ -28,6 +37,7 @@ import AddIcon from "@material-ui/icons/Add"
 import { AddTodoModal } from "../component/AddTodoModal"
 import { changeTitleOfAddTodoModal } from "../reducer/changeTitleOfAddTodoModal"
 import { decideAddTodo } from "../reducer/decideAddTodo"
+import { FilterType } from "../state/todoAppState"
 
 export const App: React.FC = () => {
   const dispatch = useDispatch()
@@ -37,6 +47,7 @@ export const App: React.FC = () => {
   const bulkEditModal = useSelector(bulkEditModalSelector)
   const errorSnackBar = useSelector(errorSnackBarSelector)
   const addTodoModal = useSelector(openAddTodoModalSelector)
+  const filterType = useSelector(taskFilterSelector)
 
   useEffect(() => {
     ;(async () => {
@@ -89,6 +100,14 @@ export const App: React.FC = () => {
     [dispatch]
   )
 
+  const handleChangeTaskFilter = useCallback(
+    (e: any) => {
+      const value = Number(e.target.value)
+      dispatch(changeTaskFilter({ filterType: value }))
+    },
+    [dispatch]
+  )
+
   return (
     <div className="App">
       <Fab
@@ -102,12 +121,47 @@ export const App: React.FC = () => {
         <CircularProgress />
       ) : (
         <>
-          <TodoList todoList={_.toArray(todoList.byId)} />
+          <TodoList
+            filterType={filterType}
+            todoList={_.toArray(todoList.byId)}
+          />
           <AppBar position="fixed">
             <Toolbar>
               <Button color="inherit" onClick={handleBulkEditButtonClick}>
                 一括編集
               </Button>
+              <div>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={filterType === FilterType.All}
+                      onChange={handleChangeTaskFilter}
+                      value={FilterType.All}
+                    />
+                  }
+                  label={"全て"}
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={filterType === FilterType.Active}
+                      onChange={handleChangeTaskFilter}
+                      value={FilterType.Active}
+                    />
+                  }
+                  label={"未着手"}
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={filterType === FilterType.Complete}
+                      onChange={handleChangeTaskFilter}
+                      value={FilterType.Complete}
+                    />
+                  }
+                  label={"完了"}
+                />
+              </div>
             </Toolbar>
           </AppBar>
           <BulkEditModal

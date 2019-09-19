@@ -20,3 +20,5 @@ export const loadingSelector = (state: AppState) => state.todoApp.loading
 
 export const openAddTodoModalSelector = (state: AppState) =>
   state.todoApp.addTodoModal
+
+export const taskFilterSelector = (state: AppState) => state.todoApp.filterType

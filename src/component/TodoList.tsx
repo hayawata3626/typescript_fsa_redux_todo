@@ -1,15 +1,28 @@
 import * as React from "react"
-import { Todo } from "../state/todoAppState"
+import { FilterType, Todo } from "../state/todoAppState"
 import { TodoItemContainer } from "../container/TodoItemContainer"
+import _ from "lodash"
+import { Typography } from "@material-ui/core"
 
 type Props = {
+  filterType: FilterType
   todoList: ReadonlyArray<Todo>
 }
 
-export const TodoList = ({ todoList }: Props) => (
+export const TodoList = ({ filterType, todoList }: Props) => (
   <div style={{ marginTop: "90px" }}>
-    {todoList.map((todo, index) => (
-      <TodoItemContainer todo={todo} key={index} />
-    ))}
+    {filterType === FilterType.All &&
+      todoList.map((todo, index) => (
+        <TodoItemContainer todo={todo} key={index} />
+      ))}
+    {filterType === FilterType.Active &&
+      todoList
+        .filter(todo => todo.done !== true)
+        .map((todo, index) => <TodoItemContainer todo={todo} key={index} />)}
+    {filterType === FilterType.Complete &&
+      todoList
+        .filter((todo, index) => todo.done === true)
+        .map((todo, index) => <TodoItemContainer todo={todo} key={index} />)}
+    {_.isEmpty(todoList) && <Typography>タスクがありません</Typography>}
   </div>
 )
