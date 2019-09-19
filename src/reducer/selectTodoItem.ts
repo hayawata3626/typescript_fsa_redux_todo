@@ -1,6 +1,7 @@
 import { TodoAppState } from "../state/todoAppState"
 import produce, { Draft } from "immer"
 import actionCreatorFactory from "typescript-fsa"
+import _ from "lodash"
 
 type Payload = {
   id: number
@@ -15,4 +16,7 @@ export const selectTodoItemReducer = (
 ): TodoAppState =>
   produce(state, (draftState: Draft<TodoAppState>) => {
     draftState.todoList.byId[id].selected = selected
+    draftState.selectedTodoIds = selected
+      ? _.unionBy([...draftState.selectedTodoIds, id])
+      : _.remove(draftState.selectedTodoIds, selectedId => selectedId !== id)
   })

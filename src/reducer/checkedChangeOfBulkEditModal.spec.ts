@@ -8,7 +8,7 @@ describe("checkedChangeOfBulkEditModal", () => {
   beforeEach(() => {
     state = todoReducer(
       initialState,
-      checkedChangeOfBulkEditModal({ selected: true })
+      checkedChangeOfBulkEditModal({ checked: true })
     )
   })
 

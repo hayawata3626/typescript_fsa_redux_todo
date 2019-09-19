@@ -60,8 +60,8 @@ export const App: React.FC = () => {
   )
 
   const handleCheckedChange = useCallback(
-    selected => {
-      dispatch(checkedChangeOfBulkEditModal({ selected: selected }))
+    checked => {
+      dispatch(checkedChangeOfBulkEditModal({ checked: checked }))
     },
     [dispatch]
   )

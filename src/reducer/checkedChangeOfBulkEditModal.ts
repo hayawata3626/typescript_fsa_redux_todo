@@ -3,7 +3,7 @@ import actionCreatorFactory from "typescript-fsa"
 import produce, { Draft } from "immer"
 
 type Payload = {
-  selected: boolean
+  checked: boolean
 }
 
 export const checkedChangeOfBulkEditModal = actionCreatorFactory()<Payload>(
@@ -12,8 +12,8 @@ export const checkedChangeOfBulkEditModal = actionCreatorFactory()<Payload>(
 
 export const checkedChangeOfBulkEditModalReducer = (
   state: TodoAppState,
-  { selected }: Payload
+  { checked }: Payload
 ): TodoAppState =>
   produce(state, (draftState: Draft<TodoAppState>) => {
-    draftState.bulkEditModal.done = selected
+    draftState.bulkEditModal.done = checked
   })
