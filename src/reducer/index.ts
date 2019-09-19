@@ -54,6 +54,7 @@ import {
   closeAddTodoModalReducer
 } from "./closeAddTodoModal"
 import { selectTodoItem, selectTodoItemReducer } from "./selectTodoItem"
+import { deleteTodo, deleteTodoReducer } from "./deleteTodo"
 
 export * from "./changeTaskTitle"
 export * from "./changeSelect"
@@ -69,6 +70,7 @@ export * from "./loadInitialDataSuccess"
 export * from "./loadInitialDataFailure"
 export * from "./openAddTodoModal"
 export * from "./closeAddTodoModal"
+export * from "./deleteTodo"
 
 export const todoReducer = reducerWithInitialState(initialState)
   .case(changeTodoTitle, changeTaskTitleReducer)
@@ -89,3 +91,4 @@ export const todoReducer = reducerWithInitialState(initialState)
   .case(decideAddTodo, decideAddTodoReducer)
   .case(closeAddTodoModal, closeAddTodoModalReducer)
   .case(selectTodoItem, selectTodoItemReducer)
+  .case(deleteTodo, deleteTodoReducer)
