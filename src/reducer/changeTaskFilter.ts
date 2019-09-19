@@ -13,9 +13,7 @@ export const changeTaskFilter = actionCreatorFactory()<Payload>(
 export const changeTaskFilterReducer = (
   state: TodoAppState,
   { filterType }: Payload
-): TodoAppState => {
-  console.log(filterType, "filterType")
-  return produce(state, (draftState: Draft<TodoAppState>) => {
+): TodoAppState =>
+  produce(state, (draftState: Draft<TodoAppState>) => {
     draftState.filterType = filterType
   })
-}

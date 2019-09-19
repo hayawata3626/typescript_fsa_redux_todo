@@ -16,7 +16,6 @@ export const deleteTodoReducer = (
 ): TodoAppState =>
   produce(state, (draftState: TodoAppState) => {
     const arrayOfTodo: ReadonlyArray<Todo> = _.toArray(draftState.todoList.byId)
-    console.log(draftState.todoList.byId, "arrayOfTodo")
     draftState.todoList.byId = fromArrayToObject(
       _.remove(arrayOfTodo, todo => {
         return todo.id !== id
