@@ -7,6 +7,7 @@ import {
 import _ from "lodash"
 import { fromArrayToObject } from "../util/fromArrayToObject"
 import actionCreatorFactory from "typescript-fsa"
+import produce, { Draft } from "immer"
 
 type Payload = {}
 
@@ -14,23 +15,21 @@ export const decideBulkModal = actionCreatorFactory()<Payload>(
   "decideBulkModal"
 )
 
-export const decideBulkModalReducer = (state: TodoAppState): TodoAppState => ({
-  ...state,
-  todoList: {
-    ...state.todoList,
-    byId: changeSelectedTodo(
-      state.selectedTodoIds,
-      _.toArray(state.todoList.byId),
-      state.bulkEditModal
+export const decideBulkModalReducer = (state: TodoAppState): TodoAppState =>
+  produce(state, (draftState: Draft<TodoAppState>) => {
+    draftState.todoList.byId = changeSelectedTodo(
+      draftState.selectedTodoIds,
+      _.toArray(draftState.todoList.byId),
+      draftState.bulkEditModal
     )
-  },
-  bulkEditModal: {
-    ...state.bulkEditModal,
-    open: false,
-    title: "",
-    done: false
-  }
-})
+
+    draftState.bulkEditModal = {
+      ...draftState.bulkEditModal,
+      open: false,
+      title: "",
+      done: false
+    }
+  })
 
 const changeSelectedTodo = (
   selectedIds: ReadonlyArray<number>,
