@@ -19,7 +19,7 @@ export const deleteTodoReducer = (
     draftState.todoList.byId = fromArrayToObject(
       _.filter(arrayOfTodo, todo => todo.id !== id)
     )
-    draftState.todoList.allIds = _.remove(
+    draftState.todoList.allIds = _.filter(
       draftState.todoList.allIds,
       todoId => todoId !== id
     )
