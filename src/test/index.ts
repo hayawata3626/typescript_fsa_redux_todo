@@ -8,5 +8,5 @@ export const TodoItemFactory = Factory.define<Todo>("TodoItem")
     selected: false,
     done: false
   })
-  .sequence("id", index => `Todo_${index}`)
+  .sequence("id", index => index)
   .sequence("title", index => `title_${index}`)

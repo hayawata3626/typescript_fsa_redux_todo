@@ -42,6 +42,7 @@ const changeSelectedTodo = (
         ? {
             ...todo,
             title: bulkEditModal.title,
+            selected: false,
             done: bulkEditModal.done
           }
         : todo
