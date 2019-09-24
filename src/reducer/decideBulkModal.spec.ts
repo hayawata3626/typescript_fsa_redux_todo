@@ -1,14 +1,10 @@
 import { decideBulkModal } from "./decideBulkModal"
-import {
-  BulkEditModal,
-  initialState,
-  TodoAppState,
-  TodoById
-} from "../state/todoAppState"
+import { initialState, TodoAppState, TodoById } from "../state/todoAppState"
 import { todoReducer } from "./index"
 import { TodoItemFactory } from "../test"
 import { fromArrayToObject } from "../util/fromArrayToObject"
 import _ from "lodash"
+import produce, { Draft } from "immer"
 
 describe("decideBulkModal", () => {
   const todoById: TodoById = fromArrayToObject(
@@ -18,19 +14,12 @@ describe("decideBulkModal", () => {
   let state: TodoAppState
 
   beforeEach(() => {
-    state = {
-      ...initialState,
-      todoList: {
-        ...initialState.todoList,
-        byId: todoById
-      },
-      bulkEditModal: {
-        ...initialState.bulkEditModal,
-        title: "ラーメン食べる",
-        done: true
-      },
-      selectedTodoIds: _.keys(todoById).map(id => _.toNumber(id))
-    }
+    state = produce(initialState, (draftState: Draft<TodoAppState>) => {
+      draftState.todoList.byId = todoById
+      draftState.bulkEditModal.title = "ラーメン食べる"
+      draftState.bulkEditModal.done = true
+      draftState.selectedTodoIds = _.keys(todoById).map(id => _.toNumber(id))
+    })
     state = todoReducer(state, decideBulkModal({}))
   })
 
