@@ -1,6 +1,6 @@
 import { changeTodoTitle, todoReducer } from "./index"
 import { initialState, Todo, TodoAppState } from "../state/todoAppState"
-import { TodoItemFactory } from "../test"
+import { TodoItemFactory } from "../factory"
 
 describe("changeTaskTitle", () => {
   let state: TodoAppState

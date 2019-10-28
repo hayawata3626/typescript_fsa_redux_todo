@@ -1,7 +1,7 @@
 import { selectTodoItem } from "./selectTodoItem"
 import { initialState, Todo, TodoAppState } from "../state/todoAppState"
 import { todoReducer } from "./index"
-import { TodoItemFactory } from "../test"
+import { TodoItemFactory } from "../factory"
 
 describe("selectTodoItem", () => {
   let state: TodoAppState

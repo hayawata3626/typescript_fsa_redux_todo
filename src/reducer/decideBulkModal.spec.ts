@@ -1,7 +1,7 @@
 import { decideBulkModal } from "./decideBulkModal"
 import { initialState, TodoAppState, TodoById } from "../state/todoAppState"
 import { todoReducer } from "./index"
-import { TodoItemFactory } from "../test"
+import { TodoItemFactory } from "../factory"
 import { fromArrayToObject } from "../util/fromArrayToObject"
 import _ from "lodash"
 import produce, { Draft } from "immer"

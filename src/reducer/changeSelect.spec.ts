@@ -1,7 +1,7 @@
 import { changeSelect } from "./changeSelect"
 import { initialState, Todo, TodoAppState } from "../state/todoAppState"
 import { todoReducer } from "./index"
-import { TodoItemFactory } from "../test"
+import { TodoItemFactory } from "../factory"
 
 describe("changeSelect", () => {
   const todoItem: Todo = TodoItemFactory.build()
