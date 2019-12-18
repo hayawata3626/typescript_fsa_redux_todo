@@ -12,7 +12,7 @@ type Props = {
   onDeleteIconClick: (id: number) => void
 }
 
-export const TodoItem = ({
+export const TodoItem: React.FC<Props> = ({
   todo,
   onChangeTitle,
   onCheckedChange,
@@ -54,6 +54,7 @@ export const TodoItem = ({
         display: "flex",
         alignItems: "center"
       }}
+      data-testid="todo"
       onClick={handleItemSelect}
     >
       <Checkbox checked={todo.done} onChange={handleCheckedChange} />
