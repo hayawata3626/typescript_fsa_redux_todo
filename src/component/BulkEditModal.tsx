@@ -58,7 +58,7 @@ export const BulkEditModal = ({
     <Dialog open={bulkEditModal.open} onClick={handleBackGroundClick}>
       <DialogContent onClick={handleDialogContentClick}>
         {selectedTodoIds.map(id => (
-          <Typography>{id}が選択されています</Typography>
+          <Typography key={id}>{id}が選択されています</Typography>
         ))}
         {_.isEmpty(selectedTodoIds) && (
           <Typography>選択されているidはありません</Typography>
