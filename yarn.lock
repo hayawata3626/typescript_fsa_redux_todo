@@ -2835,10 +2835,10 @@
   dependencies:
     redux "^3.6.0"
 
-"@types/rosie@0.0.36":
-  version "0.0.36"
-  resolved "https://registry.yarnpkg.com/@types/rosie/-/rosie-0.0.36.tgz#b72ef533ee3aaf3a1cc0460ed397ad225f08240a"
-  integrity sha512-Laco637XkrSaVjvyT+gCeoKhyppAtZHq6bhA+i7Enn3aMCW1RojULHUfpiM4pRRCc1jrZ38hXyqGNq4OF9neiw==
+"@types/rosie@0.0.37":
+  version "0.0.37"
+  resolved "https://registry.yarnpkg.com/@types/rosie/-/rosie-0.0.37.tgz#b3829baca3748b3a2a95c5d027d65c3ac54d0ef4"
+  integrity sha512-ZjeBPOz2ny50513sxtGpI9iIyH8+N/Ac1F9MIxzPJsyf6nSTdVuzsCEMzEbKqCubru/u1uvBiQa4lUBptvdIUw==
 
 "@types/stack-utils@^1.0.1":
   version "1.0.1"
