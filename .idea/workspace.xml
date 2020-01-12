@@ -3,10 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="cd4cf886-72f2-413c-aa77-145cad6438eb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/network/todoApp.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/network/todoApp.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thunk/loadInitialData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/thunk/loadInitialData.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.storybook/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/.storybook/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/renovate.json" beforeDir="false" afterPath="$PROJECT_DIR$/renovate.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/TodoList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,18 +25,20 @@
         <option value="ReactComponent" />
         <option value="TypeScript File" />
         <option value="Reducer Unit Test" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
-  </component>
   <component name="ProjectId" id="1QnaroWVyuiLxbnOHbWySvc47kN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -46,11 +50,12 @@
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
-    <property name="nodejs.jest.jest_package" value="" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="/usr/local/lib/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
@@ -59,56 +64,102 @@
       <recent name="$PROJECT_DIR$/.storybook" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Jest.changeTaskTitle.titleが入力した値になっていること">
-    <configuration name="changeTaskTitle" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.Hoge">
+    <configuration name="Hoge" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/reducer/changeTaskTitle.spec.ts" />
+      <test-file value="$PROJECT_DIR$/src/component/Hoge.spec.tsx" />
       <test-names>
-        <test-name value="changeTaskTitle" />
+        <test-name value="Hoge" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="changeTaskTitle.titleが入力した値になっていること" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="TodoItem" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/component/TodoItem.spec.tsx" />
+      <test-names>
+        <test-name value="TodoItem" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="TodoItem.クリックした場合" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/component/TodoItem.spec.tsx" />
+      <test-names>
+        <test-name value="TodoItem" />
+        <test-name value="クリックした場合" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="TodoItem.タイトルを入力した場合" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/component/TodoItem.spec.tsx" />
+      <test-names>
+        <test-name value="TodoItem" />
+        <test-name value="タイトルを入力した場合" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="TodoItem.タイトルを入力した場合.タイトルが変更されていること" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/reducer/changeTaskTitle.spec.ts" />
+      <test-file value="$PROJECT_DIR$/src/component/TodoItem.spec.tsx" />
       <test-names>
-        <test-name value="changeTaskTitle" />
-        <test-name value="titleが入力した値になっていること" />
+        <test-name value="TodoItem" />
+        <test-name value="タイトルを入力した場合" />
+        <test-name value="タイトルが変更されていること" />
       </test-names>
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Jest.changeTaskTitle" />
-      <item itemvalue="Jest.changeTaskTitle.titleが入力した値になっていること" />
+      <item itemvalue="Jest.TodoItem" />
+      <item itemvalue="Jest.TodoItem.クリックした場合" />
+      <item itemvalue="Jest.TodoItem.タイトルを入力した場合.タイトルが変更されていること" />
+      <item itemvalue="Jest.Hoge" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.changeTaskTitle.titleが入力した値になっていること" />
-        <item itemvalue="Jest.changeTaskTitle" />
+        <item itemvalue="Jest.Hoge" />
+        <item itemvalue="Jest.TodoItem.タイトルを入力した場合.タイトルが変更されていること" />
+        <item itemvalue="Jest.TodoItem" />
+        <item itemvalue="Jest.TodoItem.クリックした場合" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -123,6 +174,8 @@
       <workItem from="1566485083817" duration="69880000" />
       <workItem from="1568363116220" duration="1298000" />
       <workItem from="1568409023573" duration="12990000" />
+      <workItem from="1576675174446" duration="10660000" />
+      <workItem from="1578828474095" duration="1368000" />
     </task>
     <servers />
   </component>
@@ -140,6 +193,9 @@
     <option name="exactExcludedFiles">
       <list>
         <option value="$PROJECT_DIR$/../../typescript/deep_in_typescript/02/interface.js" />
+        <option value="$PROJECT_DIR$/node_modules/wait-for-expect/lib/index.d.js" />
+        <option value="$PROJECT_DIR$/node_modules/wait-for-expect/lib/toBeInRangeMatcher.d.js" />
+        <option value="$PROJECT_DIR$/node_modules/wait-for-expect/lib/waitForExpect.spec.d.js" />
       </list>
     </option>
   </component>
@@ -155,5 +211,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="229" y="89" key="SettingsEditor" timestamp="1578829961276">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1578829961276" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1578830024262">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1578830024262" />
   </component>
 </project>

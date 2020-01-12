@@ -17,11 +17,11 @@ export const TodoList = ({ filterType, todoList }: Props) => (
       ))}
     {filterType === FilterType.Active &&
       todoList
-        .filter(todo => todo.done !== true)
+        .filter(todo => !todo.done)
         .map((todo, index) => <TodoItemContainer todo={todo} key={index} />)}
     {filterType === FilterType.Complete &&
       todoList
-        .filter((todo, index) => todo.done === true)
+        .filter((todo, index) => todo.done)
         .map((todo, index) => <TodoItemContainer todo={todo} key={index} />)}
     {_.isEmpty(todoList) && <Typography>タスクがありません</Typography>}
   </div>
