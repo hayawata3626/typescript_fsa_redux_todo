@@ -20,64 +20,66 @@ type Props = {
   onClickDecideButton: () => void
 }
 
-export const BulkEditModal = ({
-  bulkEditModal,
-  selectedTodoIds,
-  onChangeTitle,
-  onChecked,
-  onRequestClose,
-  onClickDecideButton
-}: Props) => {
-  const handleBackGroundClick = useCallback(() => {
-    onRequestClose()
-  }, [onRequestClose])
+export const BulkEditModal: React.FC<Props> = React.memo(
+  ({
+    bulkEditModal,
+    selectedTodoIds,
+    onChangeTitle,
+    onChecked,
+    onRequestClose,
+    onClickDecideButton
+  }: Props) => {
+    const handleBackGroundClick = useCallback(() => {
+      onRequestClose()
+    }, [onRequestClose])
 
-  const handleDialogContentClick = useCallback((e: React.ChangeEvent<{}>) => {
-    e.stopPropagation()
-  }, [])
+    const handleDialogContentClick = useCallback((e: React.ChangeEvent<{}>) => {
+      e.stopPropagation()
+    }, [])
 
-  const handleTextChange = useCallback(
-    (e: any) => {
-      onChangeTitle(e.target.value)
-    },
-    [onChangeTitle]
-  )
+    const handleTextChange = useCallback(
+      (e: any) => {
+        onChangeTitle(e.target.value)
+      },
+      [onChangeTitle]
+    )
 
-  const handleCheckBoxChecked = useCallback(
-    (e: any, checked: boolean) => {
-      onChecked(checked)
-    },
-    [onChecked]
-  )
+    const handleCheckBoxChecked = useCallback(
+      (e: any, checked: boolean) => {
+        onChecked(checked)
+      },
+      [onChecked]
+    )
 
-  const handleDecideButtonClick = useCallback(() => {
-    onClickDecideButton()
-  }, [onClickDecideButton])
+    const handleDecideButtonClick = useCallback(() => {
+      onClickDecideButton()
+    }, [onClickDecideButton])
 
-  return (
-    <Dialog open={bulkEditModal.open} onClick={handleBackGroundClick}>
-      <DialogContent onClick={handleDialogContentClick}>
-        {selectedTodoIds.map(id => (
-          <Typography key={id}>{id}が選択されています</Typography>
-        ))}
-        {_.isEmpty(selectedTodoIds) && (
-          <Typography>選択されているidはありません</Typography>
-        )}
-        <TextField
-          placeholder={"タイトルをクリック"}
-          onChange={handleTextChange}
-        />
-        <div>
-          完了
-          <Checkbox
-            checked={bulkEditModal.done}
-            onChange={handleCheckBoxChecked}
+    return (
+      <Dialog open={bulkEditModal.open} onClick={handleBackGroundClick}>
+        <DialogContent onClick={handleDialogContentClick}>
+          {selectedTodoIds.map(id => (
+            <Typography key={id}>{id}が選択されています</Typography>
+          ))}
+          {_.isEmpty(selectedTodoIds) && (
+            <Typography>選択されているidはありません</Typography>
+          )}
+          <TextField
+            placeholder={"タイトルをクリック"}
+            onChange={handleTextChange}
           />
-        </div>
-        <Button color={"secondary"} onClick={handleDecideButtonClick}>
-          決定
-        </Button>
-      </DialogContent>
-    </Dialog>
-  )
-}
+          <div>
+            完了
+            <Checkbox
+              checked={bulkEditModal.done}
+              onChange={handleCheckBoxChecked}
+            />
+          </div>
+          <Button color={"secondary"} onClick={handleDecideButtonClick}>
+            決定
+          </Button>
+        </DialogContent>
+      </Dialog>
+    )
+  }
+)

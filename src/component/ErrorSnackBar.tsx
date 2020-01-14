@@ -6,16 +6,18 @@ type Props = {
   message: string
 }
 
-export const ErrorSnackBar = ({ open, message }: Props) => {
-  return (
-    <Snackbar
-      open={open}
-      autoHideDuration={2000}
-      message={message}
-      anchorOrigin={{
-        vertical: "bottom",
-        horizontal: "right"
-      }}
-    />
-  )
-}
+export const ErrorSnackBar: React.FC<Props> = React.memo(
+  ({ open, message }: Props) => {
+    return (
+      <Snackbar
+        open={open}
+        autoHideDuration={2000}
+        message={message}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "right"
+        }}
+      />
+    )
+  }
+)

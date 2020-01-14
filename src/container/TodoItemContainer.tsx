@@ -10,44 +10,46 @@ type Props = Readonly<{
   todo: Todo
 }>
 
-export const TodoItemContainer = ({ todo }: Props) => {
-  const dispatch = useDispatch()
+export const TodoItemContainer: React.FC<Props> = React.memo(
+  ({ todo }: Props) => {
+    const dispatch = useDispatch()
 
-  const handleTitleChange = useCallback(
-    (id: number, title: string) => {
-      dispatch(changeTodoTitle({ id: id, title: title }))
-    },
-    [dispatch]
-  )
+    const handleTitleChange = useCallback(
+      (id: number, title: string) => {
+        dispatch(changeTodoTitle({ id: id, title: title }))
+      },
+      [dispatch]
+    )
 
-  const handleCheckedChange = useCallback(
-    (id: number, selected: boolean) => {
-      dispatch(changeSelect({ id: id, selected: selected }))
-    },
-    [dispatch]
-  )
+    const handleCheckedChange = useCallback(
+      (id: number, selected: boolean) => {
+        dispatch(changeSelect({ id: id, selected: selected }))
+      },
+      [dispatch]
+    )
 
-  const handleItemSelect = useCallback(
-    (id: number, selected: boolean) => {
-      dispatch(selectTodoItem({ id: id, selected: selected }))
-    },
-    [dispatch]
-  )
+    const handleItemSelect = useCallback(
+      (id: number, selected: boolean) => {
+        dispatch(selectTodoItem({ id: id, selected: selected }))
+      },
+      [dispatch]
+    )
 
-  const handleDeleteIconClick = useCallback(
-    versionId => {
-      dispatch(deleteTodo({ id: versionId }))
-    },
-    [dispatch]
-  )
+    const handleDeleteIconClick = useCallback(
+      versionId => {
+        dispatch(deleteTodo({ id: versionId }))
+      },
+      [dispatch]
+    )
 
-  return (
-    <TodoItem
-      todo={todo}
-      onChangeTitle={handleTitleChange}
-      onItemSelect={handleItemSelect}
-      onCheckedChange={handleCheckedChange}
-      onDeleteIconClick={handleDeleteIconClick}
-    />
-  )
-}
+    return (
+      <TodoItem
+        todo={todo}
+        onChangeTitle={handleTitleChange}
+        onItemSelect={handleItemSelect}
+        onCheckedChange={handleCheckedChange}
+        onDeleteIconClick={handleDeleteIconClick}
+      />
+    )
+  }
+)

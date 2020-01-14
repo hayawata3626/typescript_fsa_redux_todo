@@ -9,20 +9,22 @@ type Props = {
   todoList: ReadonlyArray<Todo>
 }
 
-export const TodoList = ({ filterType, todoList }: Props) => (
-  <div style={{ marginTop: "90px" }}>
-    {filterType === FilterType.All &&
-      todoList.map((todo, index) => (
-        <TodoItemContainer todo={todo} key={index} />
-      ))}
-    {filterType === FilterType.Active &&
-      todoList
-        .filter(todo => !todo.done)
-        .map((todo, index) => <TodoItemContainer todo={todo} key={index} />)}
-    {filterType === FilterType.Complete &&
-      todoList
-        .filter((todo, index) => todo.done)
-        .map((todo, index) => <TodoItemContainer todo={todo} key={index} />)}
-    {_.isEmpty(todoList) && <Typography>タスクがありません</Typography>}
-  </div>
+export const TodoList: React.FC<Props> = React.memo(
+  ({ filterType, todoList }: Props) => (
+    <div style={{ marginTop: "90px" }}>
+      {filterType === FilterType.All &&
+        todoList.map((todo, index) => (
+          <TodoItemContainer todo={todo} key={index} />
+        ))}
+      {filterType === FilterType.Active &&
+        todoList
+          .filter(todo => !todo.done)
+          .map((todo, index) => <TodoItemContainer todo={todo} key={index} />)}
+      {filterType === FilterType.Complete &&
+        todoList
+          .filter((todo, index) => todo.done)
+          .map((todo, index) => <TodoItemContainer todo={todo} key={index} />)}
+      {_.isEmpty(todoList) && <Typography>タスクがありません</Typography>}
+    </div>
+  )
 )

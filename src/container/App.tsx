@@ -39,7 +39,7 @@ import { changeTitleOfAddTodoModal } from "../reducer/changeTitleOfAddTodoModal"
 import { decideAddTodo } from "../reducer/decideAddTodo"
 import { FilterType } from "../state/todoAppState"
 
-export const App: React.FC = () => {
+export const App: React.FC = React.memo(() => {
   const dispatch = useDispatch()
   const todoList = useSelector(todoListSelector)
   const loading = useSelector(loadingSelector)
@@ -187,4 +187,4 @@ export const App: React.FC = () => {
       )}
     </div>
   )
-}
+})
