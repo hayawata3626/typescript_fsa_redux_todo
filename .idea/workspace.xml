@@ -3,9 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="cd4cf886-72f2-413c-aa77-145cad6438eb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/renovate.json" beforeDir="false" afterPath="$PROJECT_DIR$/renovate.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/AddTodoModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/AddTodoModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/BulkEditModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/BulkEditModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/ErrorSnackBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/ErrorSnackBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/TodoItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/TodoItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/TodoList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container/TodoItemContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/TodoItemContainer.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +178,8 @@
       <workItem from="1568363116220" duration="1298000" />
       <workItem from="1568409023573" duration="12990000" />
       <workItem from="1576675174446" duration="10660000" />
-      <workItem from="1578828474095" duration="4308000" />
+      <workItem from="1578828474095" duration="5309000" />
+      <workItem from="1579013188272" duration="271000" />
     </task>
     <servers />
   </component>
