@@ -18,7 +18,7 @@ describe("changeTaskTitle", () => {
       }
     }
     state = todoReducer(
-      initialState,
+      state,
       changeTodoTitle({ id: todoItem.id, title: todoItem.title })
     )
   })
