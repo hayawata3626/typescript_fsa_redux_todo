@@ -4,13 +4,7 @@
     <list default="true" id="cd4cf886-72f2-413c-aa77-145cad6438eb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/renovate.json" beforeDir="false" afterPath="$PROJECT_DIR$/renovate.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/AddTodoModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/AddTodoModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/BulkEditModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/BulkEditModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/ErrorSnackBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/ErrorSnackBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/TodoItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/TodoItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/TodoList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/container/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/container/TodoItemContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/TodoItemContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/network/todoApp.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/network/todoApp.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,10 +132,10 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Jest.Hoge" />
       <item itemvalue="Jest.TodoItem" />
       <item itemvalue="Jest.TodoItem.クリックした場合" />
       <item itemvalue="Jest.TodoItem.タイトルを入力した場合.タイトルが変更されていること" />
-      <item itemvalue="Jest.Hoge" />
     </list>
     <recent_temporary>
       <list>
@@ -217,10 +211,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="229" y="89" key="SettingsEditor" timestamp="1578829961276">
+    <state x="229" y="89" key="SettingsEditor" timestamp="1581562739735">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1578829961276" />
+    <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1581562739735" />
     <state x="1953" y="235" width="894" height="812" key="search.everywhere.popup" timestamp="1578885027040">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
