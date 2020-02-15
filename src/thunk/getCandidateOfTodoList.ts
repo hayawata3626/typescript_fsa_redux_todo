@@ -14,7 +14,7 @@ export const getCandidateOfTodoList = ({ id, title }: Payload) => async (
 ) => {
   dispatch(changeTodoTitle({ id: id, title: title }))
   try {
-    dispatch(loadTodoListStart({}))
+    dispatch(loadTodoListStart())
     dispatch(loadTodoListSuccess({ todoId: id })) // TODO: 消す
   } catch (e) {
     dispatch(loadTodoListFailure({ message: e.toString() }))

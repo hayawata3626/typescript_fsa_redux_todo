@@ -1,11 +1,10 @@
-import actionCreatorFactory from "typescript-fsa"
 import { TodoAppState } from "../state/todoAppState"
 import _ from "lodash"
 import produce, { Draft } from "immer"
+import { deprecated } from "typesafe-actions"
+const { createStandardAction } = deprecated
 
-type Payload = {}
-
-export const decideAddTodo = actionCreatorFactory()<Payload>("decideAddTodo")
+export const decideAddTodo = createStandardAction("decideAddTodo")<undefined>()
 
 export const decideAddTodoReducer = (state: TodoAppState): TodoAppState =>
   produce(state, (draftState: Draft<TodoAppState>) => {

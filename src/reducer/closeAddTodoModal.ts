@@ -1,12 +1,11 @@
-import actionCreatorFactory from "typescript-fsa"
 import { TodoAppState } from "../state/todoAppState"
 import produce, { Draft } from "immer"
+import { deprecated } from "typesafe-actions"
+const { createStandardAction } = deprecated
 
-type Payload = {}
-
-export const closeAddTodoModal = actionCreatorFactory()<Payload>(
-  "closeAddTodoModal"
-)
+export const closeAddTodoModal = createStandardAction("closeAddTodoModal")<
+  undefined
+>()
 
 export const closeAddTodoModalReducer = (state: TodoAppState): TodoAppState =>
   produce(state, (draftState: Draft<TodoAppState>) => {

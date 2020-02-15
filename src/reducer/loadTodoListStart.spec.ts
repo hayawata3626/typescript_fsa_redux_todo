@@ -6,7 +6,7 @@ describe("loadTodoListStart", () => {
   let state: TodoAppState
 
   beforeEach(() => {
-    state = todoReducer(initialState, loadTodoListStart({}))
+    state = todoReducer(initialState, loadTodoListStart())
   })
 
   it("loadingがtrueになっていること", () => {

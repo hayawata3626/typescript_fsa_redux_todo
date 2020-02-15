@@ -6,7 +6,7 @@ describe("closeBulkEditModal", () => {
   let state: TodoAppState
 
   beforeEach(() => {
-    state = todoReducer(initialState, closeBulkEditModal({}))
+    state = todoReducer(initialState, closeBulkEditModal())
   })
 
   it("bulkEditModalのopenがfalseになっていること", () => {

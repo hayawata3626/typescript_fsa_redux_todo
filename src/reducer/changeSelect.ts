@@ -1,18 +1,19 @@
 import { TodoAppState } from "../state/todoAppState"
 import _ from "lodash"
-import actionCreatorFactory from "typescript-fsa"
 import produce, { Draft } from "immer"
+import { deprecated } from "typesafe-actions"
+const { createStandardAction } = deprecated
 
 type Payload = {
   id: number
   selected: boolean
 }
 
-export const changeSelect = actionCreatorFactory()<Payload>("changeSelect")
+export const changeSelect = createStandardAction("changeSelect")<Payload>()
 
 export const changeSelectReducer = (
   state: TodoAppState,
-  { id, selected }: Payload
+  { payload: { id, selected } }: { payload: Payload }
 ): TodoAppState =>
   produce(state, (draftState: Draft<TodoAppState>) => {
     draftState.todoList.byId[id].done = selected

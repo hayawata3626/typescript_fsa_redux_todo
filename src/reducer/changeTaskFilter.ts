@@ -1,18 +1,19 @@
 import { FilterType, TodoAppState } from "../state/todoAppState"
-import actionCreatorFactory from "typescript-fsa"
 import produce, { Draft } from "immer"
+import { deprecated } from "typesafe-actions"
+const { createStandardAction } = deprecated
 
 type Payload = {
   filterType: FilterType
 }
 
-export const changeTaskFilter = actionCreatorFactory()<Payload>(
-  "changeTaskFilter"
-)
+export const changeTaskFilter = createStandardAction("changeTaskFilter")<
+  Payload
+>()
 
 export const changeTaskFilterReducer = (
   state: TodoAppState,
-  { filterType }: Payload
+  { payload: { filterType } }: { payload: Payload }
 ): TodoAppState =>
   produce(state, (draftState: Draft<TodoAppState>) => {
     draftState.filterType = filterType

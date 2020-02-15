@@ -1,12 +1,11 @@
 import { TodoAppState } from "../state/todoAppState"
-import actionCreatorFactory from "typescript-fsa"
 import produce, { Draft } from "immer"
+import { deprecated } from "typesafe-actions"
+const { createStandardAction } = deprecated
 
-type Payload = {}
-
-export const loadInitialDataStart = actionCreatorFactory()<Payload>(
+export const loadInitialDataStart = createStandardAction(
   "loadInitialDataStart"
-)
+)<undefined>()
 
 export const loadInitialDataStartReducer = (
   state: TodoAppState

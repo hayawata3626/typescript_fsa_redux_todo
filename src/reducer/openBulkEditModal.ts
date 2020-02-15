@@ -1,11 +1,10 @@
 import { TodoAppState } from "../state/todoAppState"
-import actionCreatorFactory from "typescript-fsa"
+import { deprecated } from "typesafe-actions"
+const { createStandardAction } = deprecated
 
-type Payload = {}
-
-export const openBulkEditModal = actionCreatorFactory()<Payload>(
-  "openBulkEditModal"
-)
+export const openBulkEditModal = createStandardAction("openBulkEditModal")<
+  undefined
+>()
 
 export const openBulkEditModalReducer = (
   state: TodoAppState

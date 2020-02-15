@@ -1,11 +1,10 @@
-import actionCreatorFactory from "typescript-fsa"
 import { TodoAppState } from "../state/todoAppState"
+import { deprecated } from "typesafe-actions"
+const { createStandardAction } = deprecated
 
-type Payload = {}
-
-export const loadTodoListStart = actionCreatorFactory()<Payload>(
-  "loadTodoListStart"
-)
+export const loadTodoListStart = createStandardAction("loadTodoListStart")<
+  undefined
+>()
 
 export const loadTodoListStartReducer = (
   state: TodoAppState

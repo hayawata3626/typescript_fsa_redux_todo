@@ -1,4 +1,3 @@
-import { reducerWithInitialState } from "typescript-fsa-reducers"
 import { changeTaskTitleReducer, changeTodoTitle } from "./changeTaskTitle"
 import { changeSelect, changeSelectReducer } from "./changeSelect"
 import {
@@ -56,6 +55,7 @@ import {
 import { selectTodoItem, selectTodoItemReducer } from "./selectTodoItem"
 import { deleteTodo, deleteTodoReducer } from "./deleteTodo"
 import { changeTaskFilter, changeTaskFilterReducer } from "./changeTaskFilter"
+import { createReducer } from "typesafe-actions"
 
 export * from "./changeTaskTitle"
 export * from "./changeSelect"
@@ -75,24 +75,27 @@ export * from "./closeAddTodoModal"
 export * from "./deleteTodo"
 export * from "./changeTaskFilter"
 
-export const todoReducer = reducerWithInitialState(initialState)
-  .case(changeTodoTitle, changeTaskTitleReducer)
-  .case(changeSelect, changeSelectReducer)
-  .case(openBulkEditModal, openBulkEditModalReducer)
-  .case(closeBulkEditModal, closeBulkEditModalReducer)
-  .case(changeTitleOfBulkEditModal, changeTitleOfBulkEditModalReducer)
-  .case(checkedChangeOfBulkEditModal, checkedChangeOfBulkEditModalReducer)
-  .case(decideBulkModal, decideBulkModalReducer)
-  .case(loadTodoListStart, loadTodoListStartReducer)
-  .case(loadTodoListSuccess, loadTodoListSuccessReducer)
-  .case(loadTodoListFailure, loadTodoListFailureReducer)
-  .case(loadInitialDataStart, loadInitialDataStartReducer)
-  .case(loadInitialDataSuccess, loadInitialDataReducer)
-  .case(loadInitialDataFailure, loadInitialDataFailureReducer)
-  .case(openAddTodoModal, openAddTodoModalReducer)
-  .case(changeTitleOfAddTodoModal, changeTitleOfAddTodoModalReducer)
-  .case(decideAddTodo, decideAddTodoReducer)
-  .case(closeAddTodoModal, closeAddTodoModalReducer)
-  .case(selectTodoItem, selectTodoItemReducer)
-  .case(deleteTodo, deleteTodoReducer)
-  .case(changeTaskFilter, changeTaskFilterReducer)
+export const todoReducer = createReducer(initialState)
+  .handleAction(loadTodoListSuccess, loadTodoListSuccessReducer)
+  .handleAction(loadInitialDataSuccess, loadInitialDataReducer)
+  .handleAction(changeTodoTitle, changeTaskTitleReducer)
+  .handleAction(openBulkEditModal, openBulkEditModalReducer)
+  .handleAction(closeBulkEditModal, closeBulkEditModalReducer)
+  .handleAction(changeTitleOfBulkEditModal, changeTitleOfBulkEditModalReducer)
+  .handleAction(
+    checkedChangeOfBulkEditModal,
+    checkedChangeOfBulkEditModalReducer
+  )
+  .handleAction(decideBulkModal, decideBulkModalReducer)
+  .handleAction(loadTodoListStart, loadTodoListStartReducer)
+  .handleAction(loadTodoListFailure, loadTodoListFailureReducer)
+  .handleAction(loadInitialDataStart, loadInitialDataStartReducer)
+  .handleAction(loadInitialDataFailure, loadInitialDataFailureReducer)
+  .handleAction(openAddTodoModal, openAddTodoModalReducer)
+  .handleAction(changeTitleOfAddTodoModal, changeTitleOfAddTodoModalReducer)
+  .handleAction(decideAddTodo, decideAddTodoReducer)
+  .handleAction(closeAddTodoModal, closeAddTodoModalReducer)
+  .handleAction(selectTodoItem, selectTodoItemReducer)
+  .handleAction(deleteTodo, deleteTodoReducer)
+  .handleAction(changeTaskFilter, changeTaskFilterReducer)
+  .handleAction(changeSelect, changeSelectReducer)

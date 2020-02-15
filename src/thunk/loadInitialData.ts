@@ -11,7 +11,7 @@ import {
 } from "../reducer"
 
 export const loadInitialData = () => async (dispatch: Dispatch) => {
-  dispatch(loadInitialDataStart({}))
+  dispatch(loadInitialDataStart())
   try {
     const { data }: AxiosResponse = await fetchInitialData()
 

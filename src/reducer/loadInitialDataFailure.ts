@@ -1,18 +1,19 @@
 import { TodoAppState } from "../state/todoAppState"
-import actionCreatorFactory from "typescript-fsa"
 import produce, { Draft } from "immer"
+import { deprecated } from "typesafe-actions"
+const { createStandardAction } = deprecated
 
 type Payload = {
   errorMessage: string
 }
 
-export const loadInitialDataFailure = actionCreatorFactory()<Payload>(
+export const loadInitialDataFailure = createStandardAction(
   "loadInitialDataFailure"
-)
+)<Payload>()
 
 export const loadInitialDataFailureReducer = (
   state: TodoAppState,
-  { errorMessage }: Payload
+  { payload: { errorMessage } }: { payload: Payload }
 ): TodoAppState =>
   produce(state, (draftState: Draft<TodoAppState>) => {
     draftState.errorSnackBar = {

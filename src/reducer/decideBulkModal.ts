@@ -6,14 +6,13 @@ import {
 } from "../state/todoAppState"
 import _ from "lodash"
 import { fromArrayToObject } from "../util/fromArrayToObject"
-import actionCreatorFactory from "typescript-fsa"
 import produce, { Draft } from "immer"
+import { deprecated } from "typesafe-actions"
+const { createStandardAction } = deprecated
 
-type Payload = {}
-
-export const decideBulkModal = actionCreatorFactory()<Payload>(
-  "decideBulkModal"
-)
+export const decideBulkModal = createStandardAction("decideBulkModal")<
+  undefined
+>()
 
 export const decideBulkModalReducer = (state: TodoAppState): TodoAppState =>
   produce(state, (draftState: Draft<TodoAppState>) => {

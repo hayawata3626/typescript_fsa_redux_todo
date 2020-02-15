@@ -24,7 +24,7 @@ describe("decideAddTodo", () => {
         title: addTodoModalTitle
       }
     }
-    state = todoReducer(state, decideAddTodo({}))
+    state = todoReducer(state, decideAddTodo())
   })
 
   it("todoListのbyIdに入力した値が入っていること", () => {

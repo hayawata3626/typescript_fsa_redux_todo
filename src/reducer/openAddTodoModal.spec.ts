@@ -6,7 +6,7 @@ describe("openAddTodoModal", () => {
   let state: TodoAppState
 
   beforeEach(() => {
-    state = todoReducer(initialState, openAddTodoModal({}))
+    state = todoReducer(initialState, openAddTodoModal())
   })
 
   it("addTodoModalのopenがtrueになっていること", () => {

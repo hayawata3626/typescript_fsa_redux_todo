@@ -1,19 +1,20 @@
 import { TodoAppState } from "../state/todoAppState"
-import actionCreatorFactory from "typescript-fsa"
 import produce, { Draft } from "immer"
+import { deprecated } from "typesafe-actions"
+const { createStandardAction } = deprecated
 
 type Payload = {
   id: number
   title: string
 }
 
-export const changeTodoTitle = actionCreatorFactory()<Payload>(
-  "changeTodoTitle"
-)
+export const changeTodoTitle = createStandardAction("changeTodoTitle")<
+  Payload
+>()
 
 export const changeTaskTitleReducer = (
   state: TodoAppState,
-  { id, title }: Payload
+  { payload: { id, title } }: { payload: Payload }
 ): TodoAppState =>
   produce(state, (draftState: Draft<TodoAppState>) => {
     draftState.todoList.byId[id].title = title

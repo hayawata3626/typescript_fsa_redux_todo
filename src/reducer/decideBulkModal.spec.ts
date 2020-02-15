@@ -20,7 +20,7 @@ describe("decideBulkModal", () => {
       draftState.bulkEditModal.done = true
       draftState.selectedTodoIds = _.keys(todoById).map(id => _.toNumber(id))
     })
-    state = todoReducer(state, decideBulkModal({}))
+    state = todoReducer(state, decideBulkModal())
   })
 
   it("bulkEditModalのopenがfalseになっていること", () => {

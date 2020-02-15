@@ -6,7 +6,7 @@ describe("loadInitialDataStart", () => {
   let state: TodoAppState
 
   beforeEach(() => {
-    state = todoReducer(initialState, loadInitialDataStart({}))
+    state = todoReducer(initialState, loadInitialDataStart())
   })
 
   it("loadingがtrueになっていること", () => {

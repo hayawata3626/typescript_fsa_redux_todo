@@ -2,9 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd4cf886-72f2-413c-aa77-145cad6438eb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/renovate.json" beforeDir="false" afterPath="$PROJECT_DIR$/renovate.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/network/todoApp.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/network/todoApp.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/TodoItem.spec.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/changeSelect.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/changeSelect.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/changeTaskFilter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/changeTaskFilter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/changeTaskTitle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/changeTaskTitle.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/changeTitleOfAddTodoModal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/changeTitleOfAddTodoModal.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/changeTitleOfBulkEditModal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/changeTitleOfBulkEditModal.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/checkedChangeOfBulkEditModal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/checkedChangeOfBulkEditModal.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/closeAddTodoModal.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/closeAddTodoModal.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/closeAddTodoModal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/closeAddTodoModal.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/closeBulkEditModal.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/closeBulkEditModal.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/closeBulkEditModal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/closeBulkEditModal.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/decideAddTodo.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/decideAddTodo.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/decideAddTodo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/decideAddTodo.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/decideBulkModal.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/decideBulkModal.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/decideBulkModal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/decideBulkModal.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/deleteTodo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/deleteTodo.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/loadInitialDataFailure.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/loadInitialDataFailure.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/loadInitialDataStart.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/loadInitialDataStart.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/loadInitialDataStart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/loadInitialDataStart.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/loadInitialDataSuccess.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/loadInitialDataSuccess.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/loadTodoListFailure.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/loadTodoListFailure.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/loadTodoListStart.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/loadTodoListStart.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/loadTodoListStart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/loadTodoListStart.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/loadTodoListSuccess.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/loadTodoListSuccess.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/openAddTodoModal.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/openAddTodoModal.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/openAddTodoModal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/openAddTodoModal.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/openBulkEditModal.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/openBulkEditModal.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/openBulkEditModal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/openBulkEditModal.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/selectTodoItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/selectTodoItem.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thunk/getCandidateOfTodoList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/thunk/getCandidateOfTodoList.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thunk/loadInitialData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/thunk/loadInitialData.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +73,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TypeScript JSX" />
@@ -61,7 +98,16 @@
       <recent name="$PROJECT_DIR$/.storybook" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.Hoge">
+  <component name="RunManager" selected="Jest.All Tests">
+    <configuration name="All Tests" type="JavaScriptTestRunnerJest" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
     <configuration name="Hoge" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -132,10 +178,11 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Jest.Hoge" />
+      <item itemvalue="Jest.All Tests" />
       <item itemvalue="Jest.TodoItem" />
       <item itemvalue="Jest.TodoItem.クリックした場合" />
       <item itemvalue="Jest.TodoItem.タイトルを入力した場合.タイトルが変更されていること" />
+      <item itemvalue="Jest.Hoge" />
     </list>
     <recent_temporary>
       <list>
@@ -174,6 +221,7 @@
       <workItem from="1576675174446" duration="10660000" />
       <workItem from="1578828474095" duration="5309000" />
       <workItem from="1579013188272" duration="271000" />
+      <workItem from="1581669608506" duration="84000" />
     </task>
     <servers />
   </component>
@@ -211,14 +259,53 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="229" y="89" key="SettingsEditor" timestamp="1581562739735">
+    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581666466813">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1581562739735" />
-    <state x="1953" y="235" width="894" height="812" key="search.everywhere.popup" timestamp="1578885027040">
+    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1581666466813" />
+    <state x="374" y="235" width="692" height="615" key="EditFileWatcherDialog" timestamp="1581667875109">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="374" y="235" width="692" height="615" key="EditFileWatcherDialog/0.0.1440.900@0.0.1440.900" timestamp="1581667875109" />
+    <state width="1398" height="358" key="GridCell.Tab.0.bottom" timestamp="1581669592281">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="358" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1581669592281" />
+    <state width="1398" height="358" key="GridCell.Tab.0.center" timestamp="1581669592279">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="358" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1581669592279" />
+    <state width="1398" height="358" key="GridCell.Tab.0.left" timestamp="1581669592278">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="358" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1581669592278" />
+    <state width="1398" height="358" key="GridCell.Tab.0.right" timestamp="1581669592280">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="358" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1581669592280" />
+    <state x="229" y="89" key="SettingsEditor" timestamp="1581669586257">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1581669586257" />
+    <state x="386" y="207" width="667" height="486" key="find.popup" timestamp="1581672854161">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="386" y="207" width="667" height="486" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1581672854161" />
+    <state x="1953" y="235" width="894" height="812" key="search.everywhere.popup" timestamp="1581730685831">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
-    <state x="1953" y="235" width="894" height="812" key="search.everywhere.popup/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1578885027040" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1578830910382" />
+    <state x="1953" y="235" width="894" height="812" key="search.everywhere.popup/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1581730685831" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1581674307200" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/reducer/closeAddTodoModal.ts</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

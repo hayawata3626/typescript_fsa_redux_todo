@@ -1,18 +1,19 @@
 import { TodoAppState } from "../state/todoAppState"
-import actionCreatorFactory from "typescript-fsa"
 import produce, { Draft } from "immer"
+import { deprecated } from "typesafe-actions"
+const { createStandardAction } = deprecated
 
 type Payload = {
   text: string
 }
 
-export const changeTitleOfBulkEditModal = actionCreatorFactory()<Payload>(
+export const changeTitleOfBulkEditModal = createStandardAction(
   "changeTitleOfBulkEditModal"
-)
+)<Payload>()
 
 export const changeTitleOfBulkEditModalReducer = (
   state: TodoAppState,
-  { text }: Payload
+  { payload: { text } }: { payload: Payload }
 ): TodoAppState =>
   produce(state, (draftState: Draft<TodoAppState>) => {
     draftState.bulkEditModal.title = text

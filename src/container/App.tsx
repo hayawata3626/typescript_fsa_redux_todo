@@ -56,11 +56,11 @@ export const App: React.FC = React.memo(() => {
   }, [dispatch])
 
   const handleBulkEditButtonClick = useCallback(() => {
-    dispatch(openBulkEditModal({}))
+    dispatch(openBulkEditModal())
   }, [dispatch])
 
   const handleCloseButtonClick = useCallback(() => {
-    dispatch(closeBulkEditModal({}))
+    dispatch(closeBulkEditModal())
   }, [dispatch])
 
   const handleTitleChange = useCallback(
@@ -78,19 +78,19 @@ export const App: React.FC = React.memo(() => {
   )
 
   const handleDecide = useCallback(() => {
-    dispatch(decideBulkModal({}))
+    dispatch(decideBulkModal())
   }, [dispatch])
 
   const handleAddTodoModalDecideButtonClick = useCallback(() => {
-    dispatch(decideAddTodo({}))
+    dispatch(decideAddTodo())
   }, [dispatch])
 
   const handleAddTodoModalRequestClose = useCallback(() => {
-    dispatch(closeAddTodoModal({}))
+    dispatch(closeAddTodoModal())
   }, [dispatch])
 
   const addTodoButtonClick = useCallback(() => {
-    dispatch(openAddTodoModal({}))
+    dispatch(openAddTodoModal())
   }, [dispatch])
 
   const handleTitleOfAddTodoModalChange = useCallback(
