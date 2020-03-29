@@ -1,7 +1,7 @@
 export enum FilterType {
-  All,
-  Active,
-  Complete
+  All = "全て",
+  Active = "着手",
+  Complete = "完了"
 }
 
 export type Todo = Readonly<{

@@ -38,6 +38,8 @@ import { AddTodoModal } from "../component/AddTodoModal"
 import { changeTitleOfAddTodoModal } from "../reducer/changeTitleOfAddTodoModal"
 import { decideAddTodo } from "../reducer/decideAddTodo"
 import { FilterType } from "../state/todoAppState"
+import { Typography } from "@material-ui/core"
+import { Input } from "@material-ui/core"
 
 export const App: React.FC = React.memo(() => {
   const dispatch = useDispatch()
@@ -103,7 +105,7 @@ export const App: React.FC = React.memo(() => {
   const handleChangeTaskFilter = useCallback(
     (e: any) => {
       const value = Number(e.target.value)
-      dispatch(changeTaskFilter({ filterType: value }))
+      dispatch(changeTaskFilter({ filterType: e.target.value }))
     },
     [dispatch]
   )
@@ -126,41 +128,59 @@ export const App: React.FC = React.memo(() => {
             todoList={_.toArray(todoList.byId)}
           />
           <AppBar position="fixed">
+            <Button color="inherit" onClick={handleBulkEditButtonClick}>
+              一括編集
+            </Button>
             <Toolbar>
-              <Button color="inherit" onClick={handleBulkEditButtonClick}>
-                一括編集
-              </Button>
               <div>
-                <FormControlLabel
-                  control={
-                    <Switch
-                      checked={filterType === FilterType.All}
-                      onChange={handleChangeTaskFilter}
-                      value={FilterType.All}
-                    />
-                  }
-                  label={"全て"}
-                />
-                <FormControlLabel
-                  control={
-                    <Switch
-                      checked={filterType === FilterType.Active}
-                      onChange={handleChangeTaskFilter}
-                      value={FilterType.Active}
-                    />
-                  }
-                  label={"未着手"}
-                />
-                <FormControlLabel
-                  control={
-                    <Switch
-                      checked={filterType === FilterType.Complete}
-                      onChange={handleChangeTaskFilter}
-                      value={FilterType.Complete}
-                    />
-                  }
-                  label={"完了"}
-                />
+                <div>
+                  <Input
+                    onClick={handleChangeTaskFilter}
+                    value={FilterType.All}
+                  />
+                </div>
+                <div>
+                  <Input
+                    onClick={handleChangeTaskFilter}
+                    value={FilterType.Active}
+                  />
+                </div>
+                <div>
+                  <Input
+                    onClick={handleChangeTaskFilter}
+                    value={FilterType.Complete}
+                  />
+                </div>
+                {/*<FormControlLabel*/}
+                {/*  control={*/}
+                {/*    <Switch*/}
+                {/*      checked={filterType === FilterType.All}*/}
+                {/*      onChange={handleChangeTaskFilter}*/}
+                {/*      value={FilterType.All}*/}
+                {/*    />*/}
+                {/*  }*/}
+                {/*  label={"全て"}*/}
+                {/*/>*/}
+                {/*<FormControlLabel*/}
+                {/*  control={*/}
+                {/*    <Switch*/}
+                {/*      checked={filterType === FilterType.Active}*/}
+                {/*      onChange={handleChangeTaskFilter}*/}
+                {/*      value={FilterType.Active}*/}
+                {/*    />*/}
+                {/*  }*/}
+                {/*  label={"未着手"}*/}
+                {/*/>*/}
+                {/*<FormControlLabel*/}
+                {/*  control={*/}
+                {/*    <Switch*/}
+                {/*      checked={filterType === FilterType.Complete}*/}
+                {/*      onChange={handleChangeTaskFilter}*/}
+                {/*      value={FilterType.Complete}*/}
+                {/*    />*/}
+                {/*  }*/}
+                {/*  label={"完了"}*/}
+                {/*/>*/}
               </div>
             </Toolbar>
           </AppBar>
