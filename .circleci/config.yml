@@ -1,0 +1,35 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies with Yarn
+          command: yarn install
+      - run:
+          name: Build Application
+          command: yarn build
+  test:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - run:
+          name: Test with yarn
+          command: yarn test
+      - store_artifacts:
+          path: test-results
+
+      - store_test_results:
+          path: test-results
+
+workflows:
+  version: 2
+  pull-request:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
