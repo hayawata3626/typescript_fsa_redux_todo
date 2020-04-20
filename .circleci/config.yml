@@ -17,6 +17,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install dependencies with Yarn
+          command: yarn install
+      - run:
           name: Test with yarn
           command: yarn test
       - store_artifacts:
