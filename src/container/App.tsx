@@ -12,14 +12,7 @@ import {
 } from "../selector"
 import _ from "lodash"
 import AppBar from "@material-ui/core/AppBar"
-import {
-  Button,
-  CircularProgress,
-  Fab,
-  FormControlLabel,
-  Switch,
-  Toolbar
-} from "@material-ui/core"
+import { Button, CircularProgress, Fab, Toolbar } from "@material-ui/core"
 import { BulkEditModal } from "../component/BulkEditModal"
 import {
   changeTaskFilter,
@@ -38,7 +31,6 @@ import { AddTodoModal } from "../component/AddTodoModal"
 import { changeTitleOfAddTodoModal } from "../reducer/changeTitleOfAddTodoModal"
 import { decideAddTodo } from "../reducer/decideAddTodo"
 import { FilterType } from "../state/todoAppState"
-import { Typography } from "@material-ui/core"
 import { Input } from "@material-ui/core"
 
 export const App: React.FC = React.memo(() => {
@@ -104,7 +96,6 @@ export const App: React.FC = React.memo(() => {
 
   const handleChangeTaskFilter = useCallback(
     (e: any) => {
-      const value = Number(e.target.value)
       dispatch(changeTaskFilter({ filterType: e.target.value }))
     },
     [dispatch]
