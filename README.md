@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 This application is concise todo application. 
-It is made for trying typesafa-actinons and unit test using jest.
+It is made for trying typesafe-actions and unit test using jest.
 
 ## Run mock server
 
