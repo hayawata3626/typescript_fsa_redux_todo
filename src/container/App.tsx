@@ -8,7 +8,7 @@ import {
   openAddTodoModalSelector,
   selectedTodoIdsSelector,
   taskFilterSelector,
-  todoListSelector
+  todoListSelector,
 } from "../selector"
 import _ from "lodash"
 import AppBar from "@material-ui/core/AppBar"
@@ -23,15 +23,15 @@ import {
   decideBulkModal,
   loadInitialData,
   openAddTodoModal,
-  openBulkEditModal
+  openBulkEditModal,
 } from "../reducer"
 import { ErrorSnackBar } from "../component/ErrorSnackBar"
 import AddIcon from "@material-ui/icons/Add"
+import EditIcon from "@material-ui/icons/Edit"
 import { AddTodoModal } from "../component/AddTodoModal"
 import { changeTitleOfAddTodoModal } from "../reducer/changeTitleOfAddTodoModal"
 import { decideAddTodo } from "../reducer/decideAddTodo"
 import { FilterType } from "../state/todoAppState"
-import { Input } from "@material-ui/core"
 
 export const App: React.FC = React.memo(() => {
   const dispatch = useDispatch()
@@ -58,14 +58,14 @@ export const App: React.FC = React.memo(() => {
   }, [dispatch])
 
   const handleTitleChange = useCallback(
-    text => {
+    (text) => {
       dispatch(changeTitleOfBulkEditModal({ text: text }))
     },
     [dispatch]
   )
 
   const handleCheckedChange = useCallback(
-    checked => {
+    (checked) => {
       dispatch(checkedChangeOfBulkEditModal({ checked: checked }))
     },
     [dispatch]
@@ -95,8 +95,9 @@ export const App: React.FC = React.memo(() => {
   )
 
   const handleChangeTaskFilter = useCallback(
-    (e: any) => {
-      dispatch(changeTaskFilter({ filterType: e.target.value }))
+    (e) => {
+      console.log(e.target.textContent)
+      dispatch(changeTaskFilter({ filterType: e.target.textContent }))
     },
     [dispatch]
   )
@@ -110,71 +111,64 @@ export const App: React.FC = React.memo(() => {
       >
         <AddIcon onClick={addTodoButtonClick} />
       </Fab>
+      <Fab
+        color="secondary"
+        style={{
+          position: "fixed",
+          bottom: "80px",
+          right: "20px",
+        }}
+        disabled={selectedTodoIds.length === 0}
+      >
+        <EditIcon color="inherit" onClick={handleBulkEditButtonClick}>
+          一括編集
+        </EditIcon>
+      </Fab>
       {loading ? (
-        <CircularProgress />
+        <div
+          style={{
+            width: "100vw",
+            height: "100vh",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <CircularProgress />
+        </div>
       ) : (
         <>
+          <AppBar position="sticky">
+            <Toolbar>
+              <div style={{ display: "flex", margin: "0 auto" }}>
+                <Button
+                  onClick={handleChangeTaskFilter}
+                  value={FilterType.All}
+                  style={{ color: getColor(filterType, FilterType.All) }}
+                >
+                  {FilterType.All}
+                </Button>
+                <Button
+                  onClick={handleChangeTaskFilter}
+                  value={FilterType.Active}
+                  style={{ color: getColor(filterType, FilterType.Active) }}
+                >
+                  {FilterType.Active}
+                </Button>
+                <Button
+                  onClick={handleChangeTaskFilter}
+                  value={FilterType.Complete}
+                  style={{ color: getColor(filterType, FilterType.Complete) }}
+                >
+                  {FilterType.Complete}
+                </Button>
+              </div>
+            </Toolbar>
+          </AppBar>
           <TodoList
             filterType={filterType}
             todoList={_.toArray(todoList.byId)}
           />
-          <AppBar position="fixed">
-            <Button color="inherit" onClick={handleBulkEditButtonClick}>
-              一括編集
-            </Button>
-            <Toolbar>
-              <div>
-                <div>
-                  <Input
-                    onClick={handleChangeTaskFilter}
-                    value={FilterType.All}
-                  />
-                </div>
-                <div>
-                  <Input
-                    onClick={handleChangeTaskFilter}
-                    value={FilterType.Active}
-                  />
-                </div>
-                <div>
-                  <Input
-                    onClick={handleChangeTaskFilter}
-                    value={FilterType.Complete}
-                  />
-                </div>
-                {/*<FormControlLabel*/}
-                {/*  control={*/}
-                {/*    <Switch*/}
-                {/*      checked={filterType === FilterType.All}*/}
-                {/*      onChange={handleChangeTaskFilter}*/}
-                {/*      value={FilterType.All}*/}
-                {/*    />*/}
-                {/*  }*/}
-                {/*  label={"全て"}*/}
-                {/*/>*/}
-                {/*<FormControlLabel*/}
-                {/*  control={*/}
-                {/*    <Switch*/}
-                {/*      checked={filterType === FilterType.Active}*/}
-                {/*      onChange={handleChangeTaskFilter}*/}
-                {/*      value={FilterType.Active}*/}
-                {/*    />*/}
-                {/*  }*/}
-                {/*  label={"未着手"}*/}
-                {/*/>*/}
-                {/*<FormControlLabel*/}
-                {/*  control={*/}
-                {/*    <Switch*/}
-                {/*      checked={filterType === FilterType.Complete}*/}
-                {/*      onChange={handleChangeTaskFilter}*/}
-                {/*      value={FilterType.Complete}*/}
-                {/*    />*/}
-                {/*  }*/}
-                {/*  label={"完了"}*/}
-                {/*/>*/}
-              </div>
-            </Toolbar>
-          </AppBar>
           <BulkEditModal
             selectedTodoIds={selectedTodoIds}
             bulkEditModal={bulkEditModal}
@@ -199,3 +193,6 @@ export const App: React.FC = React.memo(() => {
     </div>
   )
 })
+
+const getColor = (selectedType: FilterType, filterType: FilterType) =>
+  selectedType === filterType ? "yellow" : "white"
